@@ -1,0 +1,74 @@
+.heading2X1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.05rem;
+    margin: 1rem 0;
+}
+
+.headingX1 {
+    font-size: 2rem;
+    line-height: 1.3;
+    font-weight: 800;
+    letter-spacing: -0.05rem;
+    margin: 1rem 0;
+}
+
+.headingLg {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin: 1rem 0;
+  
+}
+
+.headingMd {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.borderCircle {
+    border-radius: 9999px;
+}
+
+.colorInherit {
+    color: inherit;
+}
+
+.padding1px {
+    padding-top: 1px;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listItem {
+    margin: 0 0 1.25rem;
+}
+
+.lightText {
+    color: #999;
+}
+
+.headerText {
+    font-size: 6em;
+    text-align: center;
+    font-weight: 600;
+}
+
+.headerText span span {
+    position: relative;
+    opacity: 0;
+    animation: move-text 0.75s forwards;
+}
+
+@keyframes move-text {
+    0% { bottom: -0.2em; opacity: 1; color: #ff5733}
+  
+    50% { bottom: 0.2em; color: #c70039}
+    /* 75% { color: #c70039} */
+    100% { bottom: 0; opacity: 1; color: #c70039}
+}
+

@@ -3,17 +3,19 @@ import styles from "./layout.module.css";
 import utilStyles from "../../styles/utils.module.css";
 import Link from "next/link";
 import { Component } from "react";
+import NavBar from '../navigation/navbar/navbar.component';
 
 const name = "Moody";
 
 export const siteTitle = "Moody";
 
+//animate string by char
 class SplitText extends Component {
   render(){
     return (
       <span aria-label={this.props.copy} role= {this.props.role}>
         {this.props.copy.split("").map(function(char, index) {
-          let style = {"animation-delay": (0.5 + index / 10) + "s"}
+          let style = {"animationDelay": (0.5 + index / 10) + "s"}
           return <span
                   aria-hidden="true"
                   key={index}
@@ -28,6 +30,8 @@ class SplitText extends Component {
 
 function Layout({ children, home }) {
   return (
+    <>
+    <NavBar/>
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
@@ -44,10 +48,11 @@ function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle}/>
         <meta name="twitter:card" content="cummary_large_image" /> 
       </Head>
+
       <header className={styles.header}>
           {home ? (
             <>
-                <h1 className ={utilStyles.headerText}><SplitText copy="Moody" role="heading"></SplitText></h1>
+                <h1 className ={utilStyles.headerText}><SplitText copy="Whiro" role="heading"></SplitText></h1>
                 <img
                     src="/images/star-mobile.jpg"
                     className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
@@ -56,20 +61,12 @@ function Layout({ children, home }) {
             </>
           ) : (
             <>
-                <Link href="/">
-                    <a>
+                    <span className ={utilStyles.headerText}><SplitText copy="Whiro" role="heading"></SplitText></span>
                         <img
-                            src="/images/profile.jpg"
-                            className={`${styles.headerImage} ${utilStlyes.borderCircle}`}
+                            src="/images/star-mobile.jpg"
+                            className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
                             alt={name}
                         />
-                    </a>
-                </Link>
-                <h2 className={utilStylesStyles.headingLg}>
-                    <Link href="/">
-                        <a className={utilStyles.colorInherit}>{name}</a>
-                    </Link>
-                </h2>
             </>
           )}
       </header>
@@ -82,6 +79,7 @@ function Layout({ children, home }) {
           </div>
       )}
     </div>
+    </>
   );
 }
 

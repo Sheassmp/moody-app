@@ -1,17 +1,26 @@
 import Link from "next/link";
-import React, { Component } from "react";
+import React from "react";
 import {NavContainer, NavContent, NavLogo, NavLogoContainer, NavItemList, NavItem} from './navbar.styles';
 
-const NavBar = () => (     
+const NavBar = ({home}) => (     
     <NavContainer>
         <NavContent>
             <NavLogoContainer>
                 <NavLogo src ="/images/mood.png"/>
             </NavLogoContainer>
             <NavItemList>
-                <Link href="/information-page">
-                    <NavItem>Information</NavItem>
+            {
+                home ? (
+                <Link href="/information-page"  >
+                    <NavItem>information</NavItem>
                 </Link>
+                ) :
+                (
+                <Link href="/">
+                    <NavItem>home</NavItem>
+                </Link>
+                )
+            }
                 <NavItem></NavItem>
             </NavItemList>
         </NavContent>

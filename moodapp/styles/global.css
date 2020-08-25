@@ -1,22 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@300&display=swap');
+
 html,
 
 
 body {
     padding: 0;
     margin: 0;
-    font-family: forte;
+    font-family: 'Biryani', sans-serif;
     line-height:1.6;
     font-size: 18px;
     background-color: -webkit-linear-gradient(360deg, #1C1C1C 10%, #494949 360%); background: -moz-linear-gradient(360deg, #1C1C1C 10%, #494949 360%); background: linear-gradient(360deg, #1C1C1C 10%, #494949 360%);
+    
 }
 
 * {
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 a {
     color: #e2e2e2;
     text-decoration:none;
+    font-family: forte;
 }
 
 a:hover {
@@ -27,4 +32,8 @@ a:hover {
 img {
     width: 100%;
     display: block;
+}
+
+p {
+    font-family: 'Biryani', sans-serif;
 }

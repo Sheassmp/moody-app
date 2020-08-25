@@ -1,5 +1,6 @@
 .container {
     max-width: 34rem;
+    max-height: 80vh;
     padding: 0 1 rem;
     margin: 1rem auto 6rem;
     padding-top: 25px;
@@ -24,7 +25,9 @@
   width: 800px;
   height: 800px;
   justify-content: center;
- 
+  -webkit-box-shadow: 14px 10px 23px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 14px 10px 23px -6px rgba(0,0,0,0.75);
+box-shadow: 14px 10px 23px -6px rgba(0,0,0,0.75);
 }
 
 .backtoHome {

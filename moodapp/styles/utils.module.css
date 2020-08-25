@@ -52,18 +52,70 @@
 }
 
 .headerText {
-    font-size: 9em;
+    font-size: 8em;
     text-align: center;
     text-decoration: underline #f8f8f8;
     font-weight: 600;
     top: 23vh;
-    position: absolute
+    position: absolute;
+    font-family: forte;
 }
 
 .headerText span span {
     position: relative;
     opacity: 0;
     animation: move-text 0.75s forwards;
+}
+
+
+.calendarClass {
+    box-shadow: 0 30px 40px 0 rgba(16, 36, 94, 0.2);
+    border-radius: 4px;
+    width: 350px;
+    max-width: 100%;
+    background: white;
+    font: inherit;
+    line-height: 1.125em;
+    border: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 8vh;
+    right: 2vw;
+    padding:5px;
+   
+}
+
+.calendarClass aria-labels {
+    text-decoration: none;
+}
+
+.calendarTiles {
+    text-align: center;
+    padding: 0.75em 0.5em;
+    background: none;
+    border: 0;
+}
+
+.calendarTiles :hover {
+    color: #dc2f2f;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.calendarTiles  :focus {
+    background: blue;
+    color: white;
+}
+
+.calendarClass button {
+    margin: 0;
+    border: 0;
+   
+    background: none;
+    font: inherit;
+    font-size: 0.8em;
+    height: 44px;
+    margin-bottom: 10px;
 }
 
 @keyframes move-text {

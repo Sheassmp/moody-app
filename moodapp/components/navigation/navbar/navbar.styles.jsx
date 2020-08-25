@@ -1,7 +1,7 @@
  import styled from 'styled-components';
 
 export const NavContainer = styled.nav`
-    background-color: inherit;
+    background: linear-gradient(360deg, #383838 10%, #a2a2a2 360%);
     position: sticky;
     top: 0px;
     width: 100%;

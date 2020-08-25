@@ -8,7 +8,11 @@
     "start": "next start"
   },
   "dependencies": {
+<<<<<<< HEAD
     "aframe": "^1.0.4",
+=======
+    "gray-matter": "^4.0.2",
+>>>>>>> ec891f60c760d6b4b7ca22dc9818a71774b56b22
     "next": "9.4.4",
     "react": "16.13.1",
     "react-calendar": "^3.1.0",

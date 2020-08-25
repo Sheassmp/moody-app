@@ -6,21 +6,11 @@ import CalendarComponent from "../components/calendar/calendar.component";
 import WithSpinner from "../components/with-spinner/with-spinner.component";
 import CustomButton from '../components/custom-button/custom-button.component';
 
-<<<<<<< HEAD
 const HomeInfoWithSpinner = WithSpinner(HomeInfo);
 
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
-=======
-export async function getStaticProps() {
-  return {
-    props: {
-        
-    }
-  }
-}
->>>>>>> ec891f60c760d6b4b7ca22dc9818a71774b56b22
 
     this.state = {
       selectedDate: new Date(),

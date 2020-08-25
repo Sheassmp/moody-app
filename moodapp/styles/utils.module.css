@@ -56,16 +56,9 @@
     text-align: center;
     text-decoration: underline #f8f8f8;
     font-weight: 600;
-<<<<<<< HEAD
     top: 23vh;
     position: absolute;
     font-family: forte;
-=======
-    margin-block-start: 0.37em;
-    margin-block-end: 0.37em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
->>>>>>> ec891f60c760d6b4b7ca22dc9818a71774b56b22
 }
 
 .headerText span span {

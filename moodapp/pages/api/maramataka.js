@@ -1041,12 +1041,12 @@ export default (req, res) => {
               "19": {
                 title: "Mutuwhenua",
                 desc:
-                  "Entering the lowest enrgy phase, rest & relax",
+                  "Entering the lowest energy phase, rest & relax",
               },
                 "20": {
                 title: "Omutu",
                 desc:
-                  "the lowest enrgy phase, rest, relax and look after yourself",
+                  "the lowest energy phase, rest, relax and look after yourself",
               },
               "21": {
                 title: "Whiro",
@@ -1184,7 +1184,7 @@ export default (req, res) => {
               "18": {
                 title: "Mutuwhenua",
                 desc:
-                  "Entering the lowest enrgy phase, rest & relax",
+                  "Entering the lowest energy phase, rest & relax",
               },
               "19": {
                 title: "Whiro",
@@ -1331,7 +1331,7 @@ export default (req, res) => {
               "16": {
                 title: "Mutuwhenua",
                 desc:
-                  "Entering the lowest enrgy phase, rest & relax",
+                  "Entering the lowest energy phase, rest & relax",
               },
               "17": {
                 title: "Whiro",
@@ -1484,7 +1484,7 @@ export default (req, res) => {
               "16": {
                 title: "Mutuwhenua",
                 desc:
-                  "Entering the lowest enrgy phase, rest & relax",
+                  "Entering the lowest energy phase, rest & relax",
               },
               "17": {
                 title: "Whiro",
@@ -1631,7 +1631,7 @@ export default (req, res) => {
               "14": {
                 title: "Mutuwhenua",
                 desc:
-                  "Entering the lowest enrgy phase, rest & relax",
+                  "Entering the lowest energy phase, rest & relax",
               },
               "15": {
                 title: "Whiro",
@@ -1788,7 +1788,7 @@ export default (req, res) => {
               "14": {
                 title: "Mutuwhenua",
                 desc:
-                  "the lowest enrgy phase, rest & relax",
+                  "the lowest energy phase, rest & relax",
               },
               "15": {
                 title: "Whiro",

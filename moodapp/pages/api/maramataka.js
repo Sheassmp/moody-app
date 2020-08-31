@@ -956,7 +956,7 @@ export default (req, res) => {
               "2": {
                 title: "Maurea",
                 desc:
-                  "End of the low energy phase, ca be desireable if Mawharu treated you well, undesireable if Ariroa did not",
+                  "End of the low energy phase, can be desireable if Mawharu treated you well, undesireable if Ariroa did not",
               },
               "3": {
                 title: "Atua",
@@ -1249,7 +1249,7 @@ export default (req, res) => {
               "31": {
                 title: "Maurea",
                 desc:
-                  "End of the low energy phase, ca be desireable if Mawharu treated you well, undesireable if Ariroa did not",
+                  "End of the low energy phase, can be desireable if Mawharu treated you well, undesireable if Ariroa did not",
               },
             },
         "9": {
@@ -1396,7 +1396,7 @@ export default (req, res) => {
               "29": {
                 title: "Maurea",
                 desc:
-                  "End of the low energy phase, ca be desireable if Mawharu treated you well, undesireable if Ariroa did not",
+                  "End of the low energy phase, can be desireable if Mawharu treated you well, undesireable if Ariroa did not",
               },
               "30": {
                 title: "Atua",
@@ -1549,7 +1549,7 @@ export default (req, res) => {
               "29": {
                 title: "Maurea",
                 desc:
-                  "End of the low energy phase, ca be desireable if Mawharu treated you well, undesireable if Ariroa did not",
+                  "End of the low energy phase, can be desireable if Mawharu treated you well, undesireable if Ariroa did not",
               },
               "30": {
                 title: "Atua",
@@ -1696,7 +1696,7 @@ export default (req, res) => {
               "27": {
                 title: "Maurea",
                 desc:
-                  "End of the low energy phase, ca be desireable if Mawharu treated you well, undesireable if Ariroa did not",
+                  "End of the low energy phase, can be desireable if Mawharu treated you well, undesireable if Ariroa did not",
               },
               "28": {
                 title: "Atua",
@@ -1853,7 +1853,7 @@ export default (req, res) => {
               "27": {
                 title: "Maurea",
                 desc:
-                  "End of the low energy phase, ca be desireable if Mawharu treated you well, undesireable if Ariroa did not",
+                  "End of the low energy phase, can be desireable if Mawharu treated you well, undesireable if Ariroa did not",
               },
               "28": {
                 title: "Atua",

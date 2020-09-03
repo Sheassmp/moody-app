@@ -118,6 +118,8 @@
     margin-bottom: 10px;
 }
 
+
+
 @keyframes move-text {
     0% { bottom: -0.2em; opacity: 1; color: #34374c}
     50% { bottom: 0.2em; color: #dc2f2f}

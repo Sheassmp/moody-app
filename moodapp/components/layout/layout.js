@@ -9,23 +9,6 @@ const name = "Moody";
 
 export const siteTitle = "Moody";
 
-//animate string by char
-class SplitText extends Component {
-  render() {
-    return (
-      <span aria-label={this.props.copy} role={this.props.role}>
-        {this.props.copy.split("").map(function (char, index) {
-          let style = { animationDelay: 0.5 + index / 10 + "s" };
-          return (
-            <span aria-hidden="true" key={index} style={style}>
-              {char}
-            </span>
-          );
-        })}
-      </span>
-    );
-  }
-}
 
 function Layout({ children, home }) {
   return (
@@ -64,7 +47,7 @@ function Layout({ children, home }) {
         <main>{children}</main>
         {!home && (
           <div className={styles.backToHome}>
-            <Link href="/">
+            <Link href="/">.
               <a>← Back to home</a>
             </Link>
           </div>

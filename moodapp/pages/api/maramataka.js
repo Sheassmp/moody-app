@@ -3,6 +3,29 @@
 export default (req, res) => {
   res.statusCode = 200;
   res.json({
+
+
+    setMoonPhases: {
+      
+        fullmoon: {
+            year: {
+                "2020": {
+                    "2": {},
+                    "2": {},
+                    "1": {},
+                    "30": {},
+                }
+            }
+        }, 
+
+        newmoon: {
+
+        },
+
+
+    },
+
+
     date: {
       year: {
         "2020": {

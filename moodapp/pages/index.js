@@ -18,7 +18,7 @@ export default class Home extends React.Component {
       loading: true,
       hidden: true,
     };
-
+    this.getMoonPhase = this.getMoonPhase.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.setPrediction = this.setPrediction.bind(this);
     this.setHidden = this.setHidden.bind(this);
@@ -26,6 +26,7 @@ export default class Home extends React.Component {
 
   componentDidMount() {
     this.setPrediction();
+    this.getMoonPhase();
     this.setState({ loading: false });
   }
 
@@ -59,8 +60,76 @@ export default class Home extends React.Component {
     this.setState({ prediction: setPrediction });
   }
 
+  getMoonPhase() {
+        
+    let day = this.state.selectedDate.getDate();
+    let month = this.state.selectedDate.getMonth();
+    let year = this.state.selectedDate.setFullYear();
+
+        let c = 0, e = 0, jd = 0, b = 0;
+        
+        if(month < 3) {
+            year--;
+            month+=12;
+        }
+
+        ++month;
+
+        c = 365.25 * year;
+        
+        e = 30.6 * month;
+        //jd is total days elapsed
+        console.log(jd);
+        jd = c + e + day - 694039.09;
+        //divide by the moon cycle
+        jd /= 29.5305882;
+        //int(jd) -> b, take integer part of jd
+        
+        b = jd;
+        //subtract integer part to leave fractional part of original jd
+        jd -= b;
+        //scale fraction from 0-8 and round
+        b = Math.round(jd * 8);
+        
+        if(b >= 8) {
+            b = 0;
+        }
+
+
+        switch(b){
+            case 0: 
+                return console.log("New Moon");
+                break;
+            case 1:
+                return console.log("Waxing Crescent Moon");
+                break;
+            case 2:
+                return console.log("Quater Moon");
+                break;
+            case 3:
+                return console.log("Waxing Gibbious Moon");
+            case 4:
+                return console.log("Full Moon");
+                break;
+            case 5:
+                return console.log("Waning Gibbious Moon");
+                break;
+            case 6:
+                return console.log("Last Quater Moon");
+                break;
+            case 7:
+                return console.log("Waning Crescent Moon");
+                break;
+            default:
+                return console.log("Error");
+
+        }
+  }
+
   render() {
     const {prediction} = this.state;
+    console.log(this.state.selectedDate)
+
 
     return (
       <Layout home>
@@ -71,7 +140,7 @@ export default class Home extends React.Component {
         <HomeInfoWithSpinner
           isLoading={this.state.loading}
           title={prediction.title}
-          dateText={this.state.selectedDate.toDateString()}
+          dateText={this.state.selectedDate.toTimeString()}
           genText={prediction.desc}
         />
         {this.state.hidden ?

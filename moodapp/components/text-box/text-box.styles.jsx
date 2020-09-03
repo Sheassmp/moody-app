@@ -31,5 +31,6 @@ export const DisplayDate = styled.h1`
     font-weight: lighter;
     font-size: 1.5rem;
     text-align: center;
+    color: grey;
     
 `;

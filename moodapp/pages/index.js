@@ -4,7 +4,7 @@ import Layout, { siteTitle } from "../components/layout/layout";
 import HomeInfo from "../components/home-info/home-info.component";
 import CalendarComponent from "../components/calendar/calendar.component";
 import WithSpinner from "../components/with-spinner/with-spinner.component";
-import CustomButton from '../components/custom-button/custom-button.component';
+import CustomButton from "../components/custom-button/custom-button.component";
 
 const HomeInfoWithSpinner = WithSpinner(HomeInfo);
 
@@ -17,6 +17,7 @@ export default class Home extends React.Component {
       prediction: {},
       loading: true,
       hidden: true,
+      moonPhase: '',
     };
     this.getMoonPhase = this.getMoonPhase.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -60,76 +61,77 @@ export default class Home extends React.Component {
     this.setState({ prediction: setPrediction });
   }
 
+  financial(x) {
+    Number.parseFloat(x).toFixed();
+
+    return x;
+  }
+
   getMoonPhase() {
-        
-    let day = this.state.selectedDate.getDate();
-    let month = this.state.selectedDate.getMonth();
-    let year = this.state.selectedDate.setFullYear();
+    const date = this.state.selectedDate;
+    var day = date.getDate();
+    var month = date.getMonth();
+    var year = date.getFullYear();
+    let c = 0, e = 0, jd = 0, b = 0;
 
-        let c = 0, e = 0, jd = 0, b = 0;
-        
-        if(month < 3) {
-            year--;
-            month+=12;
-        }
+    if (month < 3) {
+      year--;
+      month += 12;
+    }
 
-        ++month;
+    ++month;
+    
+    c = 365.25 * year;
+    e = 30.6 * month;
+    //jd is total days elapsed
+    jd = c + e + day - 694039.09;
+    //divide by the moon cycle
+    jd /= 29.5305882;
+    //int(jd) -> b, take integer part of jd
+    var leng = jd.toString();
+    b = parseInt(leng);
 
-        c = 365.25 * year;
-        
-        e = 30.6 * month;
-        //jd is total days elapsed
-        console.log(jd);
-        jd = c + e + day - 694039.09;
-        //divide by the moon cycle
-        jd /= 29.5305882;
-        //int(jd) -> b, take integer part of jd
-        
-        b = jd;
-        //subtract integer part to leave fractional part of original jd
-        jd -= b;
-        //scale fraction from 0-8 and round
-        b = Math.round(jd * 8);
-        
-        if(b >= 8) {
-            b = 0;
-        }
+    //subtract integer part to leave fractional part of original jd
+    jd -= b;
 
+    //scale fraction from 0-8 and round
+    b = Math.round(jd * 8);
 
-        switch(b){
-            case 0: 
-                return console.log("New Moon");
-                break;
-            case 1:
-                return console.log("Waxing Crescent Moon");
-                break;
-            case 2:
-                return console.log("Quater Moon");
-                break;
-            case 3:
-                return console.log("Waxing Gibbious Moon");
-            case 4:
-                return console.log("Full Moon");
-                break;
-            case 5:
-                return console.log("Waning Gibbious Moon");
-                break;
-            case 6:
-                return console.log("Last Quater Moon");
-                break;
-            case 7:
-                return console.log("Waning Crescent Moon");
-                break;
-            default:
-                return console.log("Error");
+    if (b >= 8) {
+      b = 0;
+    }
 
-        }
+    switch (b) {
+      case 0:
+        return console.log("New Moon");
+        break;
+      case 1:
+        return console.log("Waxing Crescent Moon");
+        break;
+      case 2:
+        return console.log("Quater Moon");
+        break;
+      case 3:
+        return console.log("Waxing Gibbious Moon");
+      case 4:
+        return console.log("Full Moon");
+        break;
+      case 5:
+        return console.log("Waning Gibbious Moon");
+        break;
+      case 6:
+        return console.log("Last Quater Moon");
+        break;
+      case 7:
+        return console.log("Waning Crescent Moon");
+        break;
+      default:
+        return console.log("Error");
+    }
   }
 
   render() {
-    const {prediction} = this.state;
-    console.log(this.state.selectedDate)
-
+    const { prediction } = this.state;
 
     return (
       <Layout home>
@@ -140,29 +142,27 @@ export default class Home extends React.Component {
         <HomeInfoWithSpinner
           isLoading={this.state.loading}
           title={prediction.title}
-          dateText={this.state.selectedDate.toTimeString()}
+          dateText={this.state.selectedDate.toDateString()}
           genText={prediction.desc}
         />
-        {this.state.hidden ?
+        {this.state.hidden ? (
+          <></>
+        ) : (
+          <CalendarComponent
+            calendarType={"ISO 8601"}
+            startDate={new Date()}
+            value={this.state.selectedDate}
+            onChange={this.handleChange}
 
-        (
-          <>
-         </>
-        )
-          :
-          (
-
-        <CalendarComponent
-          calendarType={"ISO 8601"}
-          startDate={new Date()}
-          value={this.state.selectedDate}
-          onChange={this.handleChange}
-          
-          // clickDayFunction={this.setPrediction}
-        />
-          )
-        }
-        <CustomButton style={{position: 'absolute', right:'36px', }} onClick={this.setHidden}>Set Prediction Date</CustomButton>
+            // clickDayFunction={this.setPrediction}
+          />
+        )}
+        <CustomButton
+          style={{ position: "absolute", right: "36px" }}
+          onClick={this.setHidden}
+        >
+          Set Prediction Date
+        </CustomButton>
       </Layout>
     );
   }

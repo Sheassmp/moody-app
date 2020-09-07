@@ -17,9 +17,11 @@ export default class Home extends React.Component {
       prediction: {},
       loading: true,
       hidden: true,
-      moonPhase: '',
+      moonPhase: "",
+      startDate: 0.0,
     };
     this.getMoonPhase = this.getMoonPhase.bind(this);
+    this.setEnergy = this.setEnergy.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.setPrediction = this.setPrediction.bind(this);
     this.setHidden = this.setHidden.bind(this);
@@ -28,6 +30,7 @@ export default class Home extends React.Component {
   componentDidMount() {
     this.setPrediction();
     this.getMoonPhase();
+    this.setEnergy(this.state.startDate);
     this.setState({ loading: false });
   }
 
@@ -38,6 +41,8 @@ export default class Home extends React.Component {
       },
       () => {
         this.setPrediction();
+        this.getMoonPhase();
+      
       }
     );
   }
@@ -61,18 +66,34 @@ export default class Home extends React.Component {
     this.setState({ prediction: setPrediction });
   }
 
-  financial(x) {
-    Number.parseFloat(x).toFixed();
+  setEnergy(moonRotation) {
 
-    return x;
+    if(moonRotation > 0.936) {
+      console.log(moonRotation);
+    }
+    switch (moonRotation) {
+      case (moonRotation > 0.936 ):
+        console.log("whiro");
+        break;
+
+      default: 
+        return console.log("found none");
+    }
   }
 
   getMoonPhase() {
     const date = this.state.selectedDate;
+
+    var moon = "";
+    var tempStart;
     var day = date.getDate();
     var month = date.getMonth();
     var year = date.getFullYear();
-    let c = 0, e = 0, jd = 0, b = 0;
+
+    let c = 0,
+      e = 0,
+      jd = 0,
+      b = 0;
 
     if (month < 3) {
       year--;
@@ -80,7 +101,7 @@ export default class Home extends React.Component {
     }
 
     ++month;
-    
+
     c = 365.25 * year;
     e = 30.6 * month;
     //jd is total days elapsed
@@ -94,36 +115,112 @@ export default class Home extends React.Component {
     //subtract integer part to leave fractional part of original jd
     jd -= b;
 
+    tempStart = jd;
+
     //scale fraction from 0-8 and round
     b = Math.round(jd * 8);
-
     if (b >= 8) {
       b = 0;
     }
 
     switch (b) {
       case 0:
-        return console.log("New Moon");
+        moon = "New Moon";
+
+        return this.setState(
+          {
+            moonPhase: moon,
+            startDate: tempStart,
+          },
+          () => {
+            this.setEnergy(this.state.startDate);
+            console.log(this.state.moonPhase, this.state.startDate);
+          }
+        );
         break;
       case 1:
-        return console.log("Waxing Crescent Moon");
+        moon = "Waxing Crescent Moon";
+        return this.setState(
+          {
+            moonPhase: moon,
+            startDate: tempStart,
+          },
+          () => {
+            console.log(this.state.moonPhase, this.state.startDate);
+          }
+        );
         break;
       case 2:
-        return console.log("Quater Moon");
+        moon = "Quater Moon";
+        return this.setState(
+          {
+            moonPhase: moon,
+            startDate: tempStart,
+          },
+          () => {
+            console.log(this.state.moonPhase, this.state.startDate);
+          }
+        );
         break;
       case 3:
-        return console.log("Waxing Gibbious Moon");
+        moon = "Waxing Gibbious Moon";
+        return this.setState(
+          {
+            moonPhase: moon,
+            startDate: tempStart,
+          },
+          () => {
+            console.log(this.state.moonPhase, this.state.startDate);
+          }
+        );
       case 4:
-        return console.log("Full Moon");
+        moon = "Full Moon";
+        return this.setState(
+          {
+            moonPhase: moon,
+            startDate: tempStart,
+          },
+          () => {
+            console.log(this.state.moonPhase, this.state.startDate);
+          }
+        );
         break;
       case 5:
-        return console.log("Waning Gibbious Moon");
+        moon = "Waning Gibbiuos Moon";
+        return this.setState(
+          {
+            moonPhase: moon,
+            startDate: tempStart,
+          },
+          () => {
+            
+            console.log(this.state.moonPhase, this.state.startDate);
+          }
+        );
         break;
       case 6:
-        return console.log("Last Quater Moon");
+        moon = "Last Quater Moon";
+        return this.setState(
+          {
+            moonPhase: moon,
+            startDate: tempStart,
+          },
+          () => {
+            console.log(this.state.moonPhase, this.state.startDate);
+          }
+        );
         break;
       case 7:
-        return console.log("Waning Crescent Moon");
+        moon = "Waning Crescent Moon";
+        return this.setState(
+          {
+            moonPhase: moon,
+            startDate: tempStart,
+          },
+          () => {
+            console.log(this.state.moonPhase, this.state.startDate);
+          }
+        );
         break;
       default:
         return console.log("Error");
@@ -132,7 +229,6 @@ export default class Home extends React.Component {
 
   render() {
     const { prediction } = this.state;
-
     return (
       <Layout home>
         <Head>

@@ -3,26 +3,155 @@
 export default (req, res) => {
   res.statusCode = 200;
   res.json({
-
-
     setMoonPhases: {
       
-        fullmoon: {
-            year: {
-                "2020": {
-                    "2": {},
-                    "2": {},
-                    "1": {},
-                    "30": {},
-                }
-            }
-        }, 
+      whiro: {
+        title: "Whiro",
+        desc: "End of the lowest energy phase, Its a time to relax and practice patience",
+      },
+      tirea: {
+        title: "Tirea",
+        desc:
+          "End of the lowest energy phase, Its a time to relax and practice patience",
+      },
+      hoata: {
+        title: "Hoata",
+        desc: 
+          "Energy is building, utilize this time and stay active",
+      },
+      oue: {	
+        title: "OUe/Ouenuku",
+        desc:
+          "Energy is building, time to keep moving especially in the morning period",
+      },
+      okoro:{
+        title: "Okoro",
+        desc:
+          "Last day of the high energy phase, A time of high motivation where the highest is within the evening period",
+      },
+      tamateadayone:  {
+        title: "Tamatea - ariki",
+        desc:
+          "The beginning of unpredictable energy, Avoid drastic decisions & making plans",
+      },
+      tamateadaytwo: {
+        title: "Tamatea - a ngana",
+        desc:
+          "unpredictable energy phase, Its a time to practice patience",
+      },
+      tamateadaythree:{
+        title: "Tamatea - a io",
+        desc:
+          "unpredictable energy phase, focus on your own preserving your wellbeing",
+      },
+      tamateadayfour: {
+        title: "Tamatea - whakapau",
+        desc:
+          "Last day of the unpredictable energys a time to give back and reflect",
+      },
+      huna: {
+        title: "Huna",
+        desc: "An unlucky day",
+      },
+      ari: {
+        title: "Ariroa",
+        desc:
+          "a low energy phase but the energy is building, have rest day",
+      }, 
+      mawharu:{
+        title: "Mawharu",
+        desc:
+          "nearing the end of the low energy phase, can be a good day",
+      },
+      maurea: {
+        title: "Maurea",
+        desc:
+          "End of the low energy phase, can be desireable if Mawharu treated you well, undesireable if Ariroa did not",
+      },
+      atua :  {
+        title: "Atua",
+        desc:
+          "An abominable day, be aware of potential pitfalls in mood",
+      },
+      ohua: {
+        title: "Ohua",
+        desc:
+          "Time to get some work done, its a good day for it!",
+      },
+      oturu:{
+        title: "Oturu",
+        desc:
+          "A good day, a good time to make big decisions",
+      },
+      rakaunui: {
+        title: "Rakau - nui",
+        desc:
+          "a good day, a great time for celebrating special occasions",
+      },
+      rakaumatohi:{
+        title: "Rakau - matohi",
+        desc:
+          "Time for big meetings and resolving issues",
+      },
+      takirau:  {
+        title: "Takirau",
+        desc:
+          "A good day to enjoy the morning",
+      },
+      oike: {
+        title: "Oike",
+        desc:
+          "Rising energy, good time to take a break after the past productive days",
+      },
+      Korekoreone: {
+        title: "Korekore",
+        desc:
+          "Can be a bad day, be mindful of whats said and done",
+      },
+      Korekoretwo:{
+        title: "Korekore turua",
+        desc:
+          "Unpleasant days korekore brings, remember to be extra patient",
+      },
+      Korekorethree:  {
+        title: "Korekore piri ki nga Tangaroa",
+        desc:
+          "Last of the unpleasant days, time to start to get invigorated",
+      },
+      tangaroaamua:  {
+        title: "Tangaroa a mua",
+        desc:
+          "A surge of energy, time to get some work done",
+      },
+      tangaroaaroto:{
+        title: "Tangaroa a roto",
+        desc:
+          "A day of high energy, make sure to be productive",
+      },
+      tangaroaakiokio: {
+        title: "Tangaroa kiokio",
+        desc:
+          "Last day of the surging energy, use this time to test yourself and try something new.",
+      },
+      otane: {
+        title: "Otane",
+        desc:
+          "Like Ice Cube said 'Today was a good day'",
+      },
+      oranganui: {
+        title: "Orongonui",
+        desc:
+          "A desirable day, if your hungry grab some fresh whitebait(ingana)",
+      },
+      omutuwhenua: {
+        title: "Mutuwhenua",
+        desc:
+          "Entering the lowest energy phase, rest & relax",
+      },
+      
 
-        newmoon: {
 
-        },
-
-
+        
     },
 
 

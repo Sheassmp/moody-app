@@ -4,7 +4,10 @@ export default (req, res) => {
   res.statusCode = 200;
   res.json({
     setMoonPhases: {
-      
+      welcome: {
+          title: "Welcome!",
+          desc: "loading..."
+      },
       whiro: {
         title: "Whiro",
         desc: "End of the lowest energy phase, Its a time to relax and practice patience",

@@ -19,8 +19,10 @@ export default class Home extends React.Component {
       hidden: true,
       moonPhase: "",
       startDate: 0.0,
+      maramatakaDay: 'welcome',
     };
     this.getMoonPhase = this.getMoonPhase.bind(this);
+    this.altSetPrediction = this.altSetPrediction.bind(this);
     this.setEnergy = this.setEnergy.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.setPrediction = this.setPrediction.bind(this);
@@ -28,57 +30,138 @@ export default class Home extends React.Component {
   }
 
   componentDidMount() {
-    this.setPrediction();
-    this.getMoonPhase();
-    this.setEnergy(this.state.startDate);
-    this.setState({ loading: false });
+      this.getMoonPhase();
+      this.setPrediction();
+      this.setEnergy(this.state.startDate);
+      this.setState({ loading: false });
   }
 
   handleChange(date) {
     this.setState(
       {
-        selectedDate: date,
+        selectedDate: date
       },
       () => {
         this.setPrediction();
         this.getMoonPhase();
-      
       }
     );
   }
 
   setHidden() {
-    this.setState((state) => ({
-      hidden: !state.hidden,
+    this.setState(state => ({
+      hidden: !state.hidden
     }));
   }
 
   setPrediction() {
+
+
+
     const pDay = this.state.selectedDate.getDate();
     const pYear = this.state.selectedDate.getFullYear();
     const pMonth = this.state.selectedDate.getMonth() + 1;
+    var day = this.state.maramatakaDay;
 
     const setPrediction =
-      this.props.date.year[pYear] &&
-      this.props.date.year[pYear].month[pMonth] &&
-      this.props.date.year[pYear].month[pMonth][pDay];
+    this.props.date.year[pYear] &&
+    this.props.date.year[pYear].month[pMonth] &&
+    this.props.date.year[pYear].month[pMonth][pDay];
+   
 
     this.setState({ prediction: setPrediction });
   }
 
+  altSetPrediction(predic) {
+
+    setTimeout(() => {
+        const returnPrediction = this.props.setMoonPhases.predic;
+        console.log(predic)
+
+    },2000)
+
+
+  }
+
   setEnergy(moonRotation) {
 
-    if(moonRotation > 0.936) {
-      console.log(moonRotation);
-    }
-    switch (moonRotation) {
-      case (moonRotation > 0.936 ):
-        console.log("whiro");
-        break;
+    var prediction = '';
 
-      default: 
-        return console.log("found none");
+    if (moonRotation > 0.00 && moonRotation < 0.056) {
+        prediction = 'hoata'
+    } else if (moonRotation > 0.056 && moonRotation < 0.089) {
+        prediction = 'oue'
+    } else if (moonRotation > 0.09 && moonRotation < 0.123) {
+        prediction = 'okoro'
+    } else if (moonRotation > 0.124 && moonRotation < 0.158) {
+        prediction = 'tamateadayone'
+    } else if (moonRotation > 0.158 && moonRotation < 0.192) {
+        prediction = 'tamateadaytwo'
+    } else if (moonRotation > 0.192 && moonRotation < 0.225) {
+        prediction = 'tamateadaythree'
+    } else if (moonRotation > 0.225 && moonRotation < 0.259) {
+        prediction = 'tamateadayfour'
+    } else if (moonRotation > 0.259 && moonRotation < 0.293) {
+        prediction = 'huna'
+    } else if (moonRotation > 0.293 && moonRotation < 0.327) {
+        prediction = 'ari'
+    } else if (moonRotation > 0.327 && moonRotation < 0.360) {
+        prediction = 'maurea'
+    } else if (moonRotation > 0.36 && moonRotation < 0.395) {
+        prediction = 'mawharu'
+    } else if (moonRotation > 0.395 && moonRotation < 0.430) {
+        prediction = 'atua'
+    } else if (moonRotation > 0.430 && moonRotation < 0.464) {
+        prediction = 'ohua'
+    } else if (moonRotation > 0.464 && moonRotation < 0.484) {
+        prediction = 'oturu'
+    } else if (moonRotation > 0.484 && moonRotation < 0.547) {
+        prediction = 'rakaunui'
+    } else if (moonRotation > 0.547 && moonRotation < 0.580) {
+        prediction = 'rakaumatohi'
+    } else if (moonRotation > 0.580 && moonRotation < 0.615) {
+        prediction = 'takirau'
+    } else if (moonRotation > 0.615 && moonRotation < 0.648) {
+        prediction = 'oike'
+    } else if (moonRotation > 0.648 && moonRotation < 0.684) {
+        prediction = 'korekoreone'
+    } else if (moonRotation > 0.684 && moonRotation < 0.717) {
+        prediction = 'korekoretwo'
+    } else if (moonRotation > 0.717 && moonRotation < 0.750) {
+        prediction = 'korekorethree'
+    } else if (moonRotation > 0.750 && moonRotation < 0.782) {
+        prediction = 'tangaroaamua'
+    } else if (moonRotation > 0.782 && moonRotation < 0.818) {
+        prediction = 'tangaroaaroto'
+    } else if (moonRotation > 0.818 && moonRotation < 0.850) {
+        prediction = 'tanagaroaakiokio'
+    } else if (moonRotation > 0.850 && moonRotation < 0.885) {
+        prediction = 'otane'
+    } else if (moonRotation > 0.885 && moonRotation < 0.920) {
+        prediction = 'oranganui'
+    } else if (moonRotation > 0.920 && moonRotation < 0.934) {
+        prediction = 'omutuwhenua'
+    } else {
+        if (moonRotation > 0.934 && moonRotation < 0.97) {
+        prediction = 'whiro'
+      } else {
+        if (moonRotation > 0.97 && moonRotation < 0.999) {
+            prediction = 'tirea'
+        } else {
+            prediction = 'error'
+        }
+      }
     }
+
+    return this.setState(
+        {
+            maramatakaDay: prediction
+        },
+        () => {
+          this.altSetPrediction(this.state.maramatakaDay)
+        }
+      );
+
   }
 
   getMoonPhase() {
@@ -130,7 +213,7 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart,
+            startDate: tempStart
           },
           () => {
             this.setEnergy(this.state.startDate);
@@ -143,9 +226,10 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart,
+            startDate: tempStart
           },
           () => {
+            this.setEnergy(this.state.startDate);
             console.log(this.state.moonPhase, this.state.startDate);
           }
         );
@@ -155,9 +239,10 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart,
+            startDate: tempStart
           },
           () => {
+            this.setEnergy(this.state.startDate);
             console.log(this.state.moonPhase, this.state.startDate);
           }
         );
@@ -167,9 +252,10 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart,
+            startDate: tempStart
           },
           () => {
+            this.setEnergy(this.state.startDate);
             console.log(this.state.moonPhase, this.state.startDate);
           }
         );
@@ -178,9 +264,10 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart,
+            startDate: tempStart
           },
           () => {
+            this.setEnergy(this.state.startDate);
             console.log(this.state.moonPhase, this.state.startDate);
           }
         );
@@ -190,10 +277,10 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart,
+            startDate: tempStart
           },
           () => {
-            
+            this.setEnergy(this.state.startDate);
             console.log(this.state.moonPhase, this.state.startDate);
           }
         );
@@ -203,9 +290,10 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart,
+            startDate: tempStart
           },
           () => {
+            this.setEnergy(this.state.startDate);
             console.log(this.state.moonPhase, this.state.startDate);
           }
         );
@@ -215,9 +303,10 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart,
+            startDate: tempStart
           },
           () => {
+            this.setEnergy(this.state.startDate);
             console.log(this.state.moonPhase, this.state.startDate);
           }
         );
@@ -229,18 +318,21 @@ export default class Home extends React.Component {
 
   render() {
     const { prediction } = this.state;
+    const {loading} = this.state;
     return (
       <Layout home>
         <Head>
           <title>{siteTitle}</title>
         </Head>
-
+       
+        
         <HomeInfoWithSpinner
-          isLoading={this.state.loading}
-          title={prediction.title}
-          dateText={this.state.selectedDate.toDateString()}
-          genText={prediction.desc}
+        isLoading={this.state.loading}
+        title={prediction.title}
+        dateText={this.state.selectedDate.toDateString()}
+        genText={prediction.desc}
         />
+   
         {this.state.hidden ? (
           <></>
         ) : (
@@ -250,7 +342,6 @@ export default class Home extends React.Component {
             value={this.state.selectedDate}
             onChange={this.handleChange}
 
-            // clickDayFunction={this.setPrediction}
           />
         )}
         <CustomButton

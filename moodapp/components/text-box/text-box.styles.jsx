@@ -24,7 +24,8 @@ export const DisplayText = styled.p`
     font-weight: lighter;
     font-size: 1.45rem;
     text-align: center;
-    
+    max-width: 700px;
+    margin: auto;
 `;
 
 export const DisplayDate = styled.h1`

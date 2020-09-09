@@ -1,4 +1,19 @@
-import styled from 'styled-components';
+import styled,{keyframes} from 'styled-components';
+
+
+const breatheAnimation = keyframes`
+ 0% { height: 800px; width: 800px; }
+ 30% { height: 900px; width: 900px; opacity: 1 }
+ 40% { height: 905px; width: 905px; opacity: 0.3; }
+ 100% { height: 800px; width: 800px; opacity: 0.6; }
+`;
+
+
+export const MoonImg = styled.img`
+    /* animation: ${breatheAnimation};
+    animation-duration: 8s;
+    animation-iteration-count: infinite; */
+`;
 
 export const HomeInfoContainer = styled.div`
     display:flex;

@@ -6,6 +6,7 @@ import HomeInfo from "../components/home-info/home-info.component";
 import CalendarComponent from "../components/calendar/calendar.component";
 import WithSpinner from "../components/with-spinner/with-spinner.component";
 import CustomButton from "../components/custom-button/custom-button.component";
+import {CalendarButton} from '../components/custom-button/custom-button.styles';
 
 const HomeInfoWithSpinner = WithSpinner(HomeInfo);
 const LayoutWithSpinner = WithSpinner(Layout);
@@ -27,11 +28,13 @@ export default class Home extends React.Component {
         desc: "Whats your mood today?"
       },
     };
+
     this.getMoonPhase = this.getMoonPhase.bind(this);
     this.setEnergy = this.setEnergy.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.SetPrediction = this.SetPrediction.bind(this);
     this.setHidden = this.setHidden.bind(this);
+
   }
 
   componentDidMount() {
@@ -311,6 +314,7 @@ export default class Home extends React.Component {
           >
             Set Prediction Date
           </CustomButton>
+          <CalendarButton/>
         </LayoutWithSpinner>
       </BrowserRouter>
     );

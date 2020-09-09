@@ -8,6 +8,8 @@ import WithSpinner from "../components/with-spinner/with-spinner.component";
 import CustomButton from "../components/custom-button/custom-button.component";
 
 const HomeInfoWithSpinner = WithSpinner(HomeInfo);
+const LayoutWithSpinner = WithSpinner(Layout);
+
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -49,7 +51,7 @@ export default class Home extends React.Component {
       },
       () => {
         this.getMoonPhase();
-        this.setHidden();
+       
       }
     );
   }
@@ -259,18 +261,14 @@ export default class Home extends React.Component {
       prediction = "error";
     }
 
-    return this.setState(
-      {
-        maramatakaDay: prediction,
-   
-      },
+    return this.setState({maramatakaDay: prediction},
       () => {
         this.SetPrediction();
       }
     );
   }
 
-  //Step 3. set the prediction from API
+  //Step 3. set the prediction from APIs
   SetPrediction() {
     const day = this.state.maramatakaDay;
     const setPrediction = this.props.setMoonPhases[day];
@@ -288,27 +286,15 @@ export default class Home extends React.Component {
 
     return (
       <BrowserRouter>
-        <Layout home>
+        <LayoutWithSpinner isLoading={loading} home>
           <Head>
             <title>{siteTitle}</title>
           </Head>
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={(props) => (
-                <HomeInfoWithSpinner
-                  isLoading={loading}
-                  title={prediction === undefined ? "Welcome!" : prediction.title}
-                  dateText={this.state.selectedDate.toDateString()}
-                  genText={prediction === undefined ? "Whats your mood today?" : prediction.desc}
-                  {...props}
-                />
-              )}
-            />
-          </Switch>
-           
-
+          <HomeInfo
+            title={prediction === undefined ? "Welcome!" : prediction.title}
+            dateText={this.state.selectedDate.toDateString()}
+            genText={prediction === undefined ? "Whats your mood today?" : prediction.desc}
+          />
           {this.state.hidden ? (
             <></>
           ) : (
@@ -320,12 +306,12 @@ export default class Home extends React.Component {
             />
           )}
           <CustomButton
-            style={{ position: "absolute", right: "36px" }}
+            style={{ position: "absolute", right: "36px", bottom: "77px" }}
             onClick={this.setHidden}
           >
             Set Prediction Date
           </CustomButton>
-        </Layout>
+        </LayoutWithSpinner>
       </BrowserRouter>
     );
   }

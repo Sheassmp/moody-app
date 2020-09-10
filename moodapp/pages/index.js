@@ -6,7 +6,7 @@ import HomeInfo from "../components/home-info/home-info.component";
 import CalendarComponent from "../components/calendar/calendar.component";
 import WithSpinner from "../components/with-spinner/with-spinner.component";
 import CustomButton from "../components/custom-button/custom-button.component";
-import {CalendarButton} from '../components/custom-button/custom-button.styles';
+import {CalendarButton, styledCircle} from '../components/custom-button/custom-button.styles';
 
 const HomeInfoWithSpinner = WithSpinner(HomeInfo);
 const LayoutWithSpinner = WithSpinner(Layout);
@@ -314,7 +314,28 @@ export default class Home extends React.Component {
           >
             Set Prediction Date
           </CustomButton>
-          <CalendarButton/>
+          {/* <CalendarButton id="my-icon" viewBox="0 0 75 75" focusable="false" >
+              
+              <circle
+                cx="37.25"
+                cy="37.25"
+                r="20"
+                fill="none"
+                className="circle"
+                strokeWidth="5px"
+              />
+                <polyline
+                  className="checkmark"
+                  points="11 18 17 17.25 22.5 25 13"
+                  transform="translate(25, 25)"
+                  strokeWidth="3.5px"             
+                />
+              <path
+                focusable="false"
+                 transform="translate(25, 25)"
+                 d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"
+              />
+          </CalendarButton> */}
         </LayoutWithSpinner>
       </BrowserRouter>
     );

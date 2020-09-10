@@ -33,10 +33,84 @@ const invertedButtonStyles = css`
   }
 `;
 
+const circleAnimation = keyframes`
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+`;
+
+const checkmarkAnimation = keyframes`
+
+    40% {
+        transform: scale(1);
+    }
+    55% {
+        stroke: #cfd8dc;
+        transform: scale(1.2);
+    }
+    70% {
+        transform: scale(1);
+    }
+    100% {
+        stroke-dashoffset: 0;
+        transform: scale(1);
+        stroke: #21b587;
+    }
+`
+
+
+
+
+const calendarButtonStyles = css`
+    .icon-box {
+		border: 1px solid #eee;
+		padding: 100px;
+		position: relative;
+		width:200px;
+	}
+	
+	.icon-box:before {
+		content: 'Hover to see animation.';
+		bottom: 5px;
+		display: block;
+		left: 0;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+	}
+	
+	.icon-box:hover .circle {
+		animation: circle-animation 0.5s ease-out forwards;
+	}
+	
+	.icon-box:hover .checkmark {
+		animation: checkmark-animation 1s ease-out forwards;
+		animation-delay: 0.25s;
+	}
+	
+	#my-icon .circle {
+		opacity: 0;
+		transform: scale(0.9);
+		transform-origin: center;
+	}
+	
+	#my-icon .checkmark {
+		stroke-dasharray: 400;
+		stroke-dashoffset: 400;
+		transform-origin: center;
+		stroke: #cfd8dc;
+	}
+`;
+
 
 const getButtonStyles = props => {
     return props.inverted ? invertedButtonStyles : buttonStyles;
 };
+
+const getCalendarBtnStyles = props => {
+    return props.inverted ? invertedButtonStyles : calendarButtonStyles;
+}
 
 export const ButtonContainer = styled.button`
     min-width: 165px;
@@ -61,11 +135,72 @@ export const ButtonContainer = styled.button`
     ${getButtonStyles}
 `;
 
-export const CalendarButton = styled(CalendarIcon)`
-     width: 100px;
+export const CalendarButton = styled.svg`
+    
+    width: 150px;
     position: absolute;
-    height: 100px;
+    height: 150px;
     bottom: 50px;
     right: 50px;
+    
+    .my-icon::before {
+        content: 'Hover to see animation.';
+		bottom: 5px;
+		display: block;
+		left: 0;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+    }
+
+
+    &#my-icon .circle {
+        stroke: #cfd8dc;
+        stroke-miterlimit: 10;
+        opacity: 0;
+		transform: scale(0.9);
+		transform-origin: center;
+        
+        &:hover {
+            animation: ${circleAnimation} 0.5s ease-out forwards;
+	
+        }
+
+    }
+
+    &#my-icon .checkmark {
+        stroke:#21b587;
+        stroke-linecap:round;
+		transform-origin: center;
+		stroke-dasharray: 400;
+		stroke-dashoffset: 400;
+    
+        &:hover {
+            animation: ${checkmarkAnimation};
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+            animation-direction: forwards;
+		    animation-delay: 0.25s;
+        }
+
+    }
+
+`;
+
+export const styledCircle = styled.circle`
+       
+       .circle {
+
+        stroke: #cfd8dc;
+        stroke-miterlimit: 10;
+
+        opacity: 0;
+		transform: scale(0.9);
+		transform-origin: center;
+
+        &:hover {
+            animation: ${circleAnimation} 0.5s ease-out forwards;
+        }
+       }
 `;
 

@@ -12,7 +12,7 @@ export const MaramatakaDayText = styled.span`
     text-align: center;
     color: black;
     display: block;
-    margin-block-start: 0.7em;
+    margin-block-start: 1em;
     margin-block-end: 0.25em;
     text-decoration: underline;
 `;

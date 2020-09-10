@@ -64,11 +64,10 @@ export default class Home extends React.Component {
     const date = this.state.selectedDate;
     
     var moon = "";
-    var tempStart;
     var day = date.getDate();
     var month = date.getMonth();
     var year = date.getFullYear();
-    var c = 0,e = 0, jd = 0, b = 0;
+    var c = 0,e = 0, jd = 0, b = 0, tempStart;
 
     if (month < 3) {
       year--;
@@ -82,7 +81,8 @@ export default class Home extends React.Component {
     jd = c + e + day - 694039.09;
     //divide by the moon cycle
     jd /= 29.5305882;
-    //int(jd) -> b, take fraction part of jd to leave b as the remaining int
+    //int(jd) -> b, take fraction part of jd 
+    //to leave b as the remaining int
     var leng = jd.toString();
     b = parseInt(leng);
     //subtract b from jd to leave fraction
@@ -98,7 +98,6 @@ export default class Home extends React.Component {
     switch (b) {
       case 0:
         moon = "New Moon";
-
         return this.setState(
           {
             moonPhase: moon,
@@ -297,6 +296,8 @@ export default class Home extends React.Component {
             title={prediction === undefined ? "Welcome!" : prediction.title}
             dateText={this.state.selectedDate.toDateString()}
             genText={prediction === undefined ? "Whats your mood today?" : prediction.desc}
+            moonPhaseText={this.state.moonPhase}
+            maramatakaDayText={prediction === undefined ? "" : prediction.title}
           />
           {this.state.hidden ? (
             <></>

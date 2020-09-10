@@ -40,7 +40,7 @@ const useError = initialState => {
 
 
 
-const HomeInfo = ({ genText, dateText, title }) => {
+const HomeInfo = ({ genText, dateText, title, moonPhaseText, maramatakaDayText }) => {
   const [randomMoon, setRandomMoon] = useState(0);
   const [photoCred, setPhotoCred] = useState(0);
   const { isErrored, setError } = useError(false);
@@ -97,7 +97,7 @@ const HomeInfo = ({ genText, dateText, title }) => {
           Unsplash
         </a>
       </PhotoText>
-      <TextBox GeneratedText={genText} dateText={dateText} />
+      <TextBox GeneratedText={genText} dateText={dateText} moonPhaseText={moonPhaseText} maramatakaDayText={maramatakaDayText} />
       </HomeInfoContainerWithSpinner>
       
       );

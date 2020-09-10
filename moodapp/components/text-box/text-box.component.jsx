@@ -1,11 +1,16 @@
 import React from 'react';
 
-import {TextBoxContainer, DisplayText, DisplayDate} from './text-box.styles'
-
-const TextBox = ({GeneratedText, dateText}) => (
+import {TextBoxContainer, DisplayText, DisplayDate, MoonPhaseText, MaramatakaDayText} from './text-box.styles'
+const moonString = "Moon Phase:  "
+const TextBox = ({GeneratedText, dateText, moonPhaseText, maramatakaDayText}) => (
+    
+    
     <TextBoxContainer>
-        <DisplayDate>{dateText}</DisplayDate>
+        <MaramatakaDayText>{maramatakaDayText}</MaramatakaDayText>
         <DisplayText>{GeneratedText}</DisplayText>
+        <MoonPhaseText>{moonString}{moonPhaseText}</MoonPhaseText>
+        <DisplayDate>{dateText}</DisplayDate>
+        
     </TextBoxContainer>
 );
 

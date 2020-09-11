@@ -50,7 +50,7 @@ const HomeInfo = ({ genText, dateText, title, moonPhaseText, maramatakaDayText }
   
   useEffect(() => {
       fetch(
-          `https://api.unsplash.com/photos/random?query=galaxy&orientation=squarish&client_id=A2G26RoYfSzkG7_-bRpcznTGCa3Q60b5-37N3YmWZC8`
+          `https://api.unsplash.com/photos/random?query=galaxy_universe&orientation=squarish&client_id=A2G26RoYfSzkG7_-bRpcznTGCa3Q60b5-37N3YmWZC8`
           )
           .then(response => response.json())
           .then(result => {

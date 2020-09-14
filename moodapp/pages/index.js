@@ -34,6 +34,7 @@ export default class Home extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.SetPrediction = this.SetPrediction.bind(this);
     this.setHidden = this.setHidden.bind(this);
+    this.Alert = this.Alert.bind(this);
 
   }
 
@@ -282,6 +283,10 @@ export default class Home extends React.Component {
       });
   }
 
+  Alert() {
+      console.log("clicked")
+  }
+
   render() {
     const { prediction } = this.state;
     const { loading } = this.state;
@@ -309,34 +314,32 @@ export default class Home extends React.Component {
               onChange={this.handleChange}
             />
           )}
-          <CustomButton
-            style={{ position: "absolute", right: "36px", bottom: "77px" }}
-            onClick={this.setHidden}
-          >
-            Set Prediction Date
-          </CustomButton>
-          {/* <CalendarButton id="my-icon" viewBox="0 0 75 75" focusable="false" >
-              
-              <circle
+          <CalendarButton onClick={this.setHidden} fill="white" id="my-icon" viewBox="0 0 75 75" focusable="false" >
+            <circle
                 cx="37.25"
                 cy="37.25"
                 r="20"
-                fill="none"
+                fillOpacity="0"
                 className="circle"
                 strokeWidth="5px"
-              />
-                <polyline
-                  className="checkmark"
-                  points="11 18 17 17.25 22.5 25 13"
-                  transform="translate(25, 25)"
-                  strokeWidth="3.5px"             
-                />
-              <path
+            />
+            <polyline
+                className="checkmark"
+                points= "11.09 18.5325 15.51125 22.95 25.17125 13.29"  
+                transform="translate(20, 20)"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                strokeWidth="4px"
+                stroke= "#21b587"  
+                fillOpacity="0"              
+            />
+            <path
                 focusable="false"
-                 transform="translate(25, 25)"
-                 d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"
-              />
-          </CalendarButton> */}
+                transform="translate(25.5, 25)"
+                d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"
+            />
+            <text>hello</text>
+          </CalendarButton>
         </LayoutWithSpinner>
       </BrowserRouter>
     );

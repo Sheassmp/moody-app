@@ -74,7 +74,7 @@ const HomeInfo = ({ genText, dateText, title, moonPhaseText, maramatakaDayText }
      
      <HomeInfoContainerWithSpinner isLoading={loading} >
      <h1 className={utilStyles.headerText}>
-        <SplitText copy={title} role="heading"></SplitText>
+        <SplitText className={utilStyles.headerLetters}  copy={title} role="heading"></SplitText>
       </h1>
       <MoonImg
         src={randomMoon}    

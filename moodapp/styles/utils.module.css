@@ -61,6 +61,10 @@
     font-family: forte;
 }
 
+.headerLetters:hover {
+    color: purple;
+}
+
 .headerText span span {
     position: relative;
     opacity: 0;

@@ -2,7 +2,7 @@
     max-width: 34rem;
     max-height: 80vh;
     padding: 0 1 rem;
-    margin: 0.6rem auto 6rem;
+    margin: 0.6rem auto 8rem;
     padding-top: 25px;
 }
 
@@ -21,13 +21,16 @@
     width: 10rem;
     height: 10rem;
 }
+
+
+
 .headerHomeImage {
   width: 800px;
   height: 800px;
   justify-content: center;
   -webkit-box-shadow: 14px 10px 23px -6px rgba(0,0,0,0.75);
--moz-box-shadow: 14px 10px 23px -6px rgba(0,0,0,0.75);
-box-shadow: 14px 10px 23px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 14px 10px 23px -6px rgba(0,0,0,0.75);
+  box-shadow: 14px 10px 23px -6px rgba(0,0,0,0.75);
 }
 
 .backtoHome {

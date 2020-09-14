@@ -36,25 +36,26 @@ const invertedButtonStyles = css`
 const circleAnimation = keyframes`
     100% {
         opacity: 1;
-        transform: scale(1);
+        transform: scale(1.2), translate(25,25);
     }
 `;
 
 const checkmarkAnimation = keyframes`
 
     40% {
-        transform: scale(1);
+        transform: scale(1.2), translate(25,25);
     }
     55% {
         stroke: #cfd8dc;
-        transform: scale(1.2);
+        transform: scale(1.2), translate(25,25);
+        
     }
     70% {
-        transform: scale(1);
+        transform: scale(1.2), translate(25,25);
     }
     100% {
         stroke-dashoffset: 0;
-        transform: scale(1);
+        transform: scale(1.2), translate(25,25);
         stroke: #21b587;
     }
 `
@@ -161,29 +162,28 @@ export const CalendarButton = styled.svg`
 		transform: scale(0.9);
 		transform-origin: center;
         
-        &:hover {
-            animation: ${circleAnimation} 0.5s ease-out forwards;
-	
-        }
 
     }
+        
+    &#my-icon:hover .circle {
+            animation: ${circleAnimation} 0.5s ease-out forwards;
+        }
 
-    &#my-icon .checkmark {
+   &#my-icon .checkmark {
         stroke:#21b587;
         stroke-linecap:round;
 		transform-origin: center;
 		stroke-dasharray: 400;
 		stroke-dashoffset: 400;
-    
-        &:hover {
+    }
+        &#my-icon:hover .checkmark {
             animation: ${checkmarkAnimation};
             animation-duration: 1s;
             animation-timing-function: ease-out;
             animation-direction: forwards;
-		    animation-delay: 0.25s;
+            animation-delay: 0.5s;
         }
-
-    }
+    
 
 `;
 
@@ -203,4 +203,5 @@ export const styledCircle = styled.circle`
         }
        }
 `;
+
 

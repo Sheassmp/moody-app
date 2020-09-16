@@ -165,7 +165,7 @@ export const CalendarButton = styled.svg`
 
     }
         
-    &#my-icon:hover .circle {
+   &#my-icon:hover .circle {
             animation: ${circleAnimation} 0.5s ease-out forwards;
         }
 
@@ -183,8 +183,6 @@ export const CalendarButton = styled.svg`
             animation-direction: forwards;
             animation-delay: 0.5s;
         }
-    
-
 `;
 
 export const styledCircle = styled.circle`

@@ -2,6 +2,8 @@ import React, {useEffect} from 'react';
 import '../styles/global.css';
 import useSWR from 'swr';
 import {firebaseCloudMessaging} from '../webpush';
+import firebase from 'firebase/app';
+
 
 
 export default function App({ Component, pageProps }) {
@@ -16,6 +18,7 @@ export default function App({ Component, pageProps }) {
                     getMessage();
                 }
             } catch (error) {
+                console.log("errrored here")
                 console.log(error);
             }
         }

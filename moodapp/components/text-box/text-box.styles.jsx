@@ -36,7 +36,7 @@ export const TextBoxContainer = styled.div`
 `;
 
 export const DisplayText = styled.p`
-    font-style: italic;
+ 
     font-size: 1.4rem;
     text-align: center;
     max-width: 700px;

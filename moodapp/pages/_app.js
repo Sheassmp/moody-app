@@ -8,26 +8,26 @@ import firebase from 'firebase/app';
 
 export default function App({ Component, pageProps }) {
 
-    // useEffect(() => {
-    //     setToken();
+    useEffect(() => {
+        setToken();
 
-    //     async function setToken() {
-    //         try {
-    //             const token = await firebaseCloudMessaging.init();
-    //             if(token) {
-    //                 getMessage();
-    //             }
-    //         } catch (error) {
-    //             console.log("errrored here")
-    //             console.log(error);
-    //         }
-    //     }
+        async function setToken() {
+            try {
+                const token = await firebaseCloudMessaging.init();
+                if(token) {
+                    getMessage();
+                }
+            } catch (error) {
+                console.log("errrored here")
+                console.log(error);
+            }
+        }
 
-    //     function getMessage() {
-    //         const messaging = firebase.messaging();
-    //         messaging.onMessage((message) => console.log('foreground', message));
-    //     }
-    // }, []);
+        function getMessage() {
+            const messaging = firebase.messaging();
+            messaging.onMessage((message) => console.log('foreground', message));
+        }
+    }, []);
 
 
     const fetcher = (url) => fetch(url).then((res) => res.json());

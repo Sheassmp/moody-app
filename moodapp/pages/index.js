@@ -1,18 +1,20 @@
 import React from "react";
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout/layout";
-import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import HomeInfo from "../components/home-info/home-info.component";
 import CalendarComponent from "../components/calendar/calendar.component";
 import WithSpinner from "../components/with-spinner/with-spinner.component";
-import CustomButton from "../components/custom-button/custom-button.component";
-import {CalendarButton, styledCircle} from '../components/custom-button/custom-button.styles';
+import {CalendarButton} from '../components/custom-button/custom-button.styles';
 
 const HomeInfoWithSpinner = WithSpinner(HomeInfo);
 const LayoutWithSpinner = WithSpinner(Layout);
 
 
 export default class Home extends React.Component {
+
+
+  
   constructor(props) {
     super(props);
 

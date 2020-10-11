@@ -45,14 +45,16 @@ const checkmarkAnimation = keyframes`
     40% {
         transform: scale(1.2), translate(25,25);
     }
+
     55% {
         stroke: #cfd8dc;
-        transform: scale(1.2), translate(25,25);
-        
+        transform: scale(1.2), translate(25,25);   
     }
+
     70% {
         transform: scale(1.2), translate(25,25);
     }
+    
     100% {
         stroke-dashoffset: 0;
         transform: scale(1.2), translate(25,25);

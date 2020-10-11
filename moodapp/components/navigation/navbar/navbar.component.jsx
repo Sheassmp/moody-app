@@ -21,7 +21,7 @@ const NavBar = ({home}) => (
                 </Link>
                 )
             }
-                <NavItem></NavItem>
+               
             </NavItemList>
         </NavContent>
     </NavContainer>

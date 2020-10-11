@@ -26,8 +26,8 @@ export const PhotoText = styled.p`
     flex-direction: column;
     align-items: center;
     position: absolute;
-    bottom: 43px;
-    left: 22px;
+    bottom: 10px;
+    left: 8px;
 
     color: white;
     box-shadow:0 30px 40px 0 rgba(16, 36, 94, 0.2);

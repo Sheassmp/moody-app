@@ -143,8 +143,8 @@ export const CalendarButton = styled.svg`
     width: 150px;
     position: absolute;
     height: 150px;
-    bottom: 50px;
-    right: 50px;
+    bottom: 25px;
+    right: 0px;
     
     .my-icon::before {
         content: 'Hover to see animation.';

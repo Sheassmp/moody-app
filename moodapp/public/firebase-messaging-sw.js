@@ -3,7 +3,7 @@ importScripts('https://www.gstatic.com/firebasejs/7.9.1/firebase-messaging.js');
 
 if(!firebase.apps.length) {
     firebase.initializeApp({
-        apiKey: "AIzaSyBPFzE9Yyuq8dgHNQmheLTfLQ9B_tSyoyI",
+    apiKey: "AIzaSyBPFzE9Yyuq8dgHNQmheLTfLQ9B_tSyoyI",
     authDomain: "moody-469d1.firebaseapp.com",
     databaseURL: "https://moody-469d1.firebaseio.com",
     projectId: "moody-469d1",

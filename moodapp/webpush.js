@@ -1,11 +1,8 @@
-import firebase, { messaging } from "firebase/app";
+import firebase from "firebase/app";
 import "firebase/messaging";
 import localforage from "localforage";
 
-
-
 const firebaseCloudMessaging = {
-  
   //check whether token available
   tokenInLocalForage: async () => {
     return localforage.getItem("fcm_token");
@@ -24,19 +21,14 @@ const firebaseCloudMessaging = {
         appId: "1:62023031291:web:c64a2c118086c73347935e",
         measurementId: "G-SZZ41J3VHJ"
       });
-      
-      
+    
       try {
         const messaging = firebase.messaging();
         const tokenInLocalForage = await this.tokenInLocalForage();
-        
         //if FCM token exists return token
         if (tokenInLocalForage !== null) {
-          
-          
           return tokenInLocalForage;
         }
-        
         //request notification permission from browser
         const status = await Notification.requestPermission();
         
@@ -47,9 +39,6 @@ const firebaseCloudMessaging = {
           if (fcm_token) {
             //setting FCM token in indexed db using localforage
             localforage.setItem("fcm_token", fcm_token);
-
-            
-          
           }
         }
       } catch (error) {
@@ -58,10 +47,6 @@ const firebaseCloudMessaging = {
       }
     }
   }
-
 };
-
-
-// export const firebaseMessaging = firebase.messaging();
 
 export { firebaseCloudMessaging};

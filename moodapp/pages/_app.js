@@ -41,14 +41,6 @@ export default function App({ Component, pageProps }) {
         }
     }, []);
 
-//     firebase.messaging.onMessage(function(payload) {
-
-//         console.log(payload.data);
-   
-//    })
-    
-
-
     // messaging.onMessage((message) => console.log('foreground', message));
     const fetcher = (url) => fetch(url).then((res) => res.json());
     const { data, error } =  useSWR('/api/maramataka', fetcher);

@@ -9,14 +9,18 @@ import {
 const Welcome = () => {
   const [loading, setLoading] = useState(true);
   const [welcomeString, setWelcomeString] = useState("Welcome!");
+  var [welcomeClass, setWelcomeClass] = useState(false);
   var [count, setCount] = useState(0);
 
   setTimeout(() => {
     setLoading(false);
 }, 3000);
 
+
+
+
 function handleClick() {
-    var text = "";
+    var text = "", wClass = "";
     setCount(++count);
 
     switch (count) {
@@ -32,11 +36,11 @@ function handleClick() {
       case 3:
             text = "The Maramataka Calendars are present all throughout the pacific"
         break;
-      case 4:
-            text = "Welcome to Moody, just a few things before we dive in"
+      case 4:            
+            setWelcomeClass(true);
         break;
       default:
-            text = "Welcome!"
+            
         break;
     }
 
@@ -52,7 +56,7 @@ function handleClick() {
     );
   else
     return (
-      <WelcomeContainer>
+      <WelcomeContainer id={"welcome"} className={welcomeClass ? "closeMe" : ""} >
         <WelcomeText>{welcomeString}</WelcomeText>
         <WelcomeButton onClick={() => handleClick()}>next</WelcomeButton>
       </WelcomeContainer>

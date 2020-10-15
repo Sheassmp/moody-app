@@ -1,5 +1,11 @@
 import styled, { keyframes } from "styled-components";
 
+const welcomeAnim = keyframes`
+    100% {
+        transform: translateX(-100vw);
+    }
+`;
+
 export const WelcomeContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -11,6 +17,14 @@ export const WelcomeContainer = styled.div`
   background: linear-gradient(360deg, #151111 10%, #a2a2a2 360%);
   z-index: 1;
   color: white;
+  transition: all 3s ease-out;
+  
+
+   #welcome {
+        animation: ${welcomeAnim} 3s ease-in-out;
+
+   }
+
 `;
 
 const borderAnim = keyframes`

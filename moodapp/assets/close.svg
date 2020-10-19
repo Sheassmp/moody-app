@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="exit-icon"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 640 640" width="640" height="640">
+<defs>
+<path class="circle" d="M435 320C435 388.99 378.99 445 310 445C241.01 445 185 388.99 185 320C185 251.01 241.01 195 310 195C378.99 195 435 251.01 435 320Z" id="co1m1uauq"></path>
+<path class="left-dash" d="M385 245L235 395" id="a2M08BCeeQ"></path>
+<path class="right-dash" d="M385 395L235 245" id="dy09n1dAn"></path>
+</defs>
+<g><g><g><g>
+<use xlink:href="#co1m1uauq" opacity="1" fill-opacity="0" stroke="#cecece" stroke-width="13" stroke-opacity="1"></use>
+</g></g><g><g>
+<use xlink:href="#a2M08BCeeQ" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="20" stroke-opacity="1"></use>
+</g></g><g><g>
+<use xlink:href="#dy09n1dAn" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="20" stroke-opacity="1"></use>
+</g></g></g></g></svg>

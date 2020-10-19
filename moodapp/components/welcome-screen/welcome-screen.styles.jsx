@@ -1,10 +1,6 @@
 import styled, { keyframes } from "styled-components";
+import CloseIcon from '../../assets/close.svg';
 
-const welcomeAnim = keyframes`
-    100% {
-        transform: translateX(-100vw);
-    }
-`;
 
 export const WelcomeContainer = styled.div`
   width: 100%;
@@ -17,41 +13,16 @@ export const WelcomeContainer = styled.div`
   background: linear-gradient(360deg, #151111 10%, #a2a2a2 360%);
   z-index: 1;
   color: white;
-  transition: all 3s ease-out;
+  /* transition: all 3s ease-out; */
   
 
-   #welcome {
-        animation: ${welcomeAnim} 3s ease-in-out;
-
+   &.closeMe {
+        transform: translateX(-100vw);
+        transition: all 2s ease-in-out;        
    }
 
 `;
 
-const borderAnim = keyframes`
-    20% {
-        color: rgba(255, 255, 255, 1);
-        -webkit-box-shadow: -2px 4px 36px -19px rgba(255,0,102,1);
-        -moz-box-shadow: -2px 4px 36px -19px rgba(255,0,102,1);
-        box-shadow: -2px 4px 36px -19px rgba(255,0,102,1);
-        outline:none;
-    }
-
-    50% {
-        color: rgba(255, 255, 255, 1);
-        -webkit-box-shadow: -2px 4px 56px -19px rgba(255,0,102,1);
--moz-box-shadow: -2px 4px 56px -19px rgba(255,0,102,1);
-box-shadow: -2px 4px 56px -19px rgba(255,0,102,1);
-        outline:none;
-    }
-
-
-
-    100% {
-         color: rgba(255, 255, 255, 1);
-         outline:none;
-    }
-
-`;
 
 export const WelcomeButton = styled.button`
   background: inherit;
@@ -104,4 +75,65 @@ export const LoadingDot = styled.div`
   animation: ease-in-out infinite alternate;
   animation-name: ${run};
   animation-duration: 1.2s;
+`;
+
+const circleAnimation = keyframes`
+    100% {
+        opacity: 1;
+        transform: scale(1.5), translate(25,25);
+    }
+`;
+
+const dashAnimation = keyframes`
+    40% {
+        transform: scale(1.1), translate(25,25);
+    }
+    55% {
+        stroke: #ff6633;
+        transform: scale(1.1),translate(25,25);
+        
+    }
+    70% {
+        transform: scale(1.1),translate(25,25);
+    }
+    100% {
+        stroke-dashoffset: 0;
+        transform: scale(1.1),translate(25,25);
+        stroke: #cc0033;
+    }
+`
+
+
+
+export const SkipButton = styled(CloseIcon)`
+    width: 80px;
+    height:80px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 1;
+    
+    &#exit-icon .left-dash .right-dash {
+        opacity: 0.5;
+        stroke-linecap:round;
+		transform-origin: center;
+		stroke-dasharray: 400;
+		stroke-dashoffset: 400;
+    }
+    &#exit-icon:hover .left-dash {
+        animation: ${dashAnimation} 0.8s ease-out forwards; 
+    }
+    &#exit-icon:hover .right-dash {
+        animation: ${dashAnimation} 1s ease-out forwards; 
+    }
+    &#exit-icon .circle {
+            opacity: 0;
+            transform-origin: center;
+    }
+    &#exit-icon:hover .circle {
+        animation: ${circleAnimation} 0.5s ease-out forwards;        
+    }
+
+
 `;

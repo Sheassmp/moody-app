@@ -296,7 +296,7 @@ export default class Home extends React.Component {
 
     return (
         <BrowserRouter>
-        {/* <Welcome/> */}
+        <Welcome/>
         <LayoutWithSpinner isLoading={loading} home>
           <Head>
             <title>{siteTitle}</title>

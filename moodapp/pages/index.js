@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout/layout";
 import { BrowserRouter } from "react-router-dom";
@@ -7,15 +7,13 @@ import CalendarComponent from "../components/calendar/calendar.component";
 import WithSpinner from "../components/with-spinner/with-spinner.component";
 import {CalendarButton} from '../components/custom-button/custom-button.styles';
 import Welcome from '../components/welcome-screen/welcome-screen.component';
+import InformationPageInfo from '../components/information-page-info/information-page-info.component';
 
-const HomeInfoWithSpinner = WithSpinner(HomeInfo);
 const LayoutWithSpinner = WithSpinner(Layout);
 
 
 export default class Home extends React.Component {
 
-
-  
   constructor(props) {
     super(props);
 
@@ -30,6 +28,8 @@ export default class Home extends React.Component {
         title: "Welcome!",
         desc: "Whats your mood today?"
       },
+      showInfo: false,
+
     };
 
     this.getMoonPhase = this.getMoonPhase.bind(this);
@@ -37,7 +37,6 @@ export default class Home extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.SetPrediction = this.SetPrediction.bind(this);
     this.setHidden = this.setHidden.bind(this);
-    this.Alert = this.Alert.bind(this);
 
   }
 
@@ -58,7 +57,6 @@ export default class Home extends React.Component {
       },
       () => {
         this.getMoonPhase();
-       
       }
     );
   }
@@ -286,65 +284,77 @@ export default class Home extends React.Component {
       });
   }
 
-  Alert() {
-      console.log("clicked")
-  }
+ 
+
 
   render() {
+
     const { prediction } = this.state;
     const { loading } = this.state;
+    const {showInfo} = this.state;
 
     return (
+
         <BrowserRouter>
         <Welcome/>
-        <LayoutWithSpinner isLoading={loading} home>
-          <Head>
-            <title>{siteTitle}</title>
-          </Head>
-          <HomeInfo
-            title={prediction === undefined ? "Welcome!" : prediction.title}
-            dateText={this.state.selectedDate.toDateString()}
-            genText={prediction === undefined ? "Whats your mood today?" : prediction.desc}
-            moonPhaseText={this.state.moonPhase}
-            maramatakaDayText={prediction === undefined ? "" : prediction.title}
-          />
-          {this.state.hidden ? (
-            <></>
-          ) : (
-            <CalendarComponent
-              calendarType={"ISO 8601"}
-              startDate={new Date()}
-              value={this.state.selectedDate}
-              onChange={this.handleChange}
-            />
-          )}
-          <CalendarButton onClick={this.setHidden} fill="white" id="my-icon" viewBox="0 0 75 75" focusable="false" >
-            <circle
-                cx="37.25"
-                cy="37.25"
-                r="20"
-                fillOpacity="0"
-                className="circle"
-                strokeWidth="5px"
-            />
-            <polyline
-                className="checkmark"
-                points= "11.09 18.5325 15.51125 22.95 25.17125 13.29"  
-                transform="translate(20, 20)"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="4px"
-                stroke= "#21b587"  
-                fillOpacity="0"              
-            />
-            <path
-                focusable="false"
-                transform="translate(25.5, 25)"
-                d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"
-            />
+            <LayoutWithSpinner isLoading={loading} home>
+            <Head>
+                <title>{siteTitle}</title>
+            </Head>
+            {
+                showInfo ? 
+
+                <InformationPageInfo />
             
-          </CalendarButton>
-        </LayoutWithSpinner>
+                :
+                
+                <HomeInfo
+                title={prediction === undefined ? "Welcome!" : prediction.title}
+                dateText={this.state.selectedDate.toDateString()}
+                genText={prediction === undefined ? "Whats your mood today?" : prediction.desc}
+                moonPhaseText={this.state.moonPhase}
+                maramatakaDayText={prediction === undefined ? "" : prediction.title}
+                />
+            }
+            {this.state.hidden ? (
+                <>
+                </>
+                ) : (
+                    <CalendarComponent
+                    calendarType={"ISO 8601"}
+                    startDate={new Date()}
+                    value={this.state.selectedDate}
+                    onChange={this.handleChange}
+                    />
+                    )}
+            <CalendarButton onClick={this.setHidden} fill="white" id="my-icon" viewBox="0 0 75 75" focusable="false" >
+                <circle
+                    cx="37.25"
+                    cy="37.25"
+                    r="20"
+                    fillOpacity="0"
+                    className="circle"
+                    strokeWidth="5px"
+                    />
+                <polyline
+                    className="checkmark"
+                    points= "11.09 18.5325 15.51125 22.95 25.17125 13.29"  
+                    transform="translate(20, 20)"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="4px"
+                    stroke= "#21b587"  
+                    fillOpacity="0"              
+                    />
+                <path
+                    focusable="false"
+                    transform="translate(25.5, 25)"
+                    d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"
+                    />
+                
+            </CalendarButton>
+            }
+            </LayoutWithSpinner>
       </BrowserRouter>
     );
   }

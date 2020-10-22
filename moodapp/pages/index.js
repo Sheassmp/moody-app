@@ -8,6 +8,8 @@ import WithSpinner from "../components/with-spinner/with-spinner.component";
 import {CalendarButton} from '../components/custom-button/custom-button.styles';
 import Welcome from '../components/welcome-screen/welcome-screen.component';
 import InformationPageInfo from '../components/information-page-info/information-page-info.component';
+import {CloseSVGButton} from '../components/svg-component/svgs.component'
+
 
 const LayoutWithSpinner = WithSpinner(Layout);
 
@@ -354,6 +356,7 @@ export default class Home extends React.Component {
                 
             </CalendarButton>
             }
+            <CloseSVGButton/>
             </LayoutWithSpinner>
       </BrowserRouter>
     );

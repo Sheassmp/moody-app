@@ -7,5 +7,9 @@ export const Container = styled.div`
     border-radius: 5px;
 `;
 
+export const BlockText = styled.p`
+    
+`;
+
 
 

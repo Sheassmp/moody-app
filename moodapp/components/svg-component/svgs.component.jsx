@@ -1,10 +1,10 @@
-import {ButtonContainer } from './svg.styles';
+import { CloseBtn,  } from './svg.styles';
 
 const CloseSVGButton = () => {
 
     return (
 
-        <ButtonContainer viewBox="0 0 640 640" width="640" height="640" style={{bottom: "0", left: "0"}} >
+        <CloseBtn id="exit-icon" viewBox="0 0 640 640" width="640" height="640"  >
             <path
                 className="circle"
                 opacity="1"
@@ -18,7 +18,7 @@ const CloseSVGButton = () => {
                 className="right-dash"
                 opacity="1"
                 fillOpacity="0"
-                stroke="#000000"
+                stroke="#ffffff"
                 strokeWidth="13" 
                 strokeOpacity="1"
                 d="M385 245L235 395"
@@ -27,12 +27,12 @@ const CloseSVGButton = () => {
                 className="left-dash"
                 opacity="1"
                 fillOpacity="0"
-                stroke="#000000"
+                stroke="#ffffff"
                 strokeWidth="13" 
                 strokeOpacity="1"
                 d="M385 395L235 245"
             />
-        </ButtonContainer>
+        </CloseBtn>
     
     )
 }

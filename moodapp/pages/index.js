@@ -1,21 +1,22 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout/layout";
 import { BrowserRouter } from "react-router-dom";
 import HomeInfo from "../components/home-info/home-info.component";
 import CalendarComponent from "../components/calendar/calendar.component";
 import WithSpinner from "../components/with-spinner/with-spinner.component";
-import {CalendarButton} from '../components/custom-button/custom-button.styles';
-import Welcome from '../components/welcome-screen/welcome-screen.component';
-import InformationPageInfo from '../components/information-page-info/information-page-info.component';
-import {CloseSVGButton} from '../components/svg-component/svgs.component'
-
+import {
+  CalendarButton,
+  CloseBtn,
+  InfoBtn
+} from "../components/custom-button/custom-button.styles";
+import Welcome from "../components/welcome-screen/welcome-screen.component";
+import InformationPageInfo from "../components/information-page-info/information-page-info.component";
+import InfoIcon from '../assets/info.svg';
 
 const LayoutWithSpinner = WithSpinner(Layout);
 
-
 export default class Home extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -30,16 +31,16 @@ export default class Home extends React.Component {
         title: "Welcome!",
         desc: "Whats your mood today?"
       },
-      showInfo: false,
-
+      showInfo: false
     };
+    
+    this.setHidden = this.setHidden.bind(this);
 
     this.getMoonPhase = this.getMoonPhase.bind(this);
     this.setEnergy = this.setEnergy.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.SetPrediction = this.SetPrediction.bind(this);
-    this.setHidden = this.setHidden.bind(this);
-
+     this.showInfo = this.showInfo.bind(this);
   }
 
   componentDidMount() {
@@ -47,31 +48,42 @@ export default class Home extends React.Component {
   }
 
   setHidden() {
-    this.setState((state) => ({
-      hidden: !state.hidden,
+    this.setState(state => ({
+      hidden: !state.hidden
     }));
   }
 
   handleChange(date) {
     this.setState(
       {
-        selectedDate: date,
+        selectedDate: date
       },
       () => {
         this.getMoonPhase();
       }
     );
   }
+
+  showInfo() {
+      console.log("clicked");
+    this.setState(state => ({
+        showInfo: !state.showInfo
+      }));
+    }
+  
   //Step 1. Get the current moon phase according to time
   getMoonPhase() {
-    
     const date = this.state.selectedDate;
-    
+
     var moon = "";
     var day = date.getDate();
     var month = date.getMonth();
     var year = date.getFullYear();
-    var c = 0,e = 0, jd = 0, b = 0, tempStart;
+    var c = 0,
+      e = 0,
+      jd = 0,
+      b = 0,
+      tempStart;
 
     if (month < 3) {
       year--;
@@ -85,7 +97,7 @@ export default class Home extends React.Component {
     jd = c + e + day - 694039.09;
     //divide by the moon cycle
     jd /= 29.5305882;
-    //int(jd) -> b, take fraction part of jd 
+    //int(jd) -> b, take fraction part of jd
     //to leave b as the remaining int
     var leng = jd.toString();
     b = parseInt(leng);
@@ -105,7 +117,7 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart,
+            startDate: tempStart
           },
           () => {
             this.setEnergy(this.state.startDate);
@@ -117,7 +129,7 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart,
+            startDate: tempStart
           },
           () => {
             this.setEnergy(this.state.startDate);
@@ -129,7 +141,7 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart,
+            startDate: tempStart
           },
           () => {
             this.setEnergy(this.state.startDate);
@@ -141,11 +153,10 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart,
+            startDate: tempStart
           },
           () => {
             this.setEnergy(this.state.startDate);
-         
           }
         );
       case 4:
@@ -153,7 +164,7 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart,
+            startDate: tempStart
           },
           () => {
             this.setEnergy(this.state.startDate);
@@ -165,7 +176,7 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart,
+            startDate: tempStart
           },
           () => {
             this.setEnergy(this.state.startDate);
@@ -177,7 +188,7 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart,
+            startDate: tempStart
           },
           () => {
             this.setEnergy(this.state.startDate);
@@ -189,7 +200,7 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart,
+            startDate: tempStart
           },
           () => {
             this.setEnergy(this.state.startDate);
@@ -244,7 +255,7 @@ export default class Home extends React.Component {
     } else if (moonRotation > 0.648 && moonRotation < 0.684) {
       prediction = "21";
     } else if (moonRotation > 0.684 && moonRotation < 0.717) {
-      prediction = "22"
+      prediction = "22";
     } else if (moonRotation > 0.717 && moonRotation < 0.75) {
       prediction = "23";
     } else if (moonRotation > 0.75 && moonRotation < 0.782) {
@@ -267,98 +278,140 @@ export default class Home extends React.Component {
       prediction = "error";
     }
 
-    return this.setState({maramatakaDay: prediction},
-      () => {
-        this.SetPrediction();
-      }
-    );
+    return this.setState({ maramatakaDay: prediction }, () => {
+      this.SetPrediction();
+    });
   }
 
   //Step 3. set the prediction from APIs
   SetPrediction() {
     const day = this.state.maramatakaDay;
     const setPrediction = this.props.setMoonPhases[day];
-    this.setState({prediction: setPrediction},
-      () => {
-        setTimeout(() => {
-          this.setState({loading: false});
-        }, 2000)
-      });
+    this.setState({ prediction: setPrediction }, () => {
+      setTimeout(() => {
+        this.setState({ loading: false });
+      }, 2000);
+    });
   }
-
- 
-
 
   render() {
-
     const { prediction } = this.state;
     const { loading } = this.state;
-    const {showInfo} = this.state;
+    const { showInfo } = this.state;
 
     return (
-
-        <BrowserRouter>
-        <Welcome/>
-            <LayoutWithSpinner isLoading={loading} home>
-            <Head>
-                <title>{siteTitle}</title>
-            </Head>
-            {
-                showInfo ? 
-
-                <InformationPageInfo />
-            
-                :
-                
-                <HomeInfo
+      <BrowserRouter>
+        <Welcome />
+        {showInfo ? (
+            <InformationPageInfo />
+          ) : (null) }
+        <LayoutWithSpinner isLoading={loading} home>
+          <Head>
+            <title>{siteTitle}</title>
+          </Head>
+        
+            <>
+              <HomeInfo
                 title={prediction === undefined ? "Welcome!" : prediction.title}
                 dateText={this.state.selectedDate.toDateString()}
-                genText={prediction === undefined ? "Whats your mood today?" : prediction.desc}
+                genText={
+                  prediction === undefined
+                    ? "Whats your mood today?"
+                    : prediction.desc
+                }
                 moonPhaseText={this.state.moonPhase}
-                maramatakaDayText={prediction === undefined ? "" : prediction.title}
-                />
-            }
-            {this.state.hidden ? (
-                <>
-                </>
-                ) : (
-                    <CalendarComponent
-                    calendarType={"ISO 8601"}
-                    startDate={new Date()}
-                    value={this.state.selectedDate}
-                    onChange={this.handleChange}
-                    />
-                    )}
-            <CalendarButton onClick={this.setHidden} fill="white" id="my-icon" viewBox="0 0 75 75" focusable="false" >
-                <circle
-                    cx="37.25"
-                    cy="37.25"
-                    r="20"
-                    fillOpacity="0"
-                    className="circle"
-                    strokeWidth="5px"
-                    />
-                <polyline
-                    className="checkmark"
-                    points= "11.09 18.5325 15.51125 22.95 25.17125 13.29"  
-                    transform="translate(20, 20)"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="4px"
-                    stroke= "#21b587"  
-                    fillOpacity="0"              
-                    />
-                <path
-                    focusable="false"
-                    transform="translate(25.5, 25)"
-                    d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"
-                    />
+                maramatakaDayText={
+                  prediction === undefined ? "" : prediction.title
+                }
+              />
+
                 
+            </>
+        
+          {this.state.hidden ? (
+              <>
+              <InfoBtn onClick={this.showInfo} />
+              <CalendarButton
+                onClick={this.setHidden}
+                fill="white"
+                id="my-icon"
+                viewBox="0 0 75 75"
+                focusable="false"
+               >
+              <circle
+                cx="37.25"
+                cy="37.25"
+                r="20"
+                fillOpacity="0"
+                className="circle"
+                strokeWidth="5px"
+              />
+              <polyline
+                className="checkmark"
+                points="11.09 18.5325 15.51125 22.95 25.17125 13.29"
+                transform="translate(20, 20)"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="4px"
+                stroke="#21b587"
+                fillOpacity="0"
+              />
+              <path
+                focusable="false"
+                transform="translate(25.5, 25)"
+                d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"
+              />
             </CalendarButton>
-            }
-            <CloseSVGButton/>
-            </LayoutWithSpinner>
+            </>
+          ) : (
+              <>
+              <InfoBtn id= "info-button" onClick= {this.showInfo} />
+              <CloseBtn
+                onClick={this.setHidden}
+                id="exit-icon"
+                viewBox="0 0 640 640"
+                width="640"
+                height="640"
+                >
+                <path
+                  className="circle"
+                  opacity="1"
+                  fillOpacity="0"
+                  stroke="#cecece"
+                  strokeWidth="13"
+                  strokeOpacity="1"
+                  d="M435 320C435 388.99 378.99 445 310 445C241.01 445 185 388.99 185 320C185 251.01 241.01 195 310 195C378.99 195 435 251.01 435 320Z"
+                  />
+                <path
+                  className="right-dash"
+                  opacity="1"
+                  fillOpacity="0"
+                  stroke="#ffffff"
+                  strokeWidth="13"
+                  strokeOpacity="1"
+                  d="M385 245L235 395"
+                  />
+                <path
+                  className="left-dash"
+                  opacity="1"
+                  fillOpacity="0"
+                  stroke="#ffffff"
+                  strokeWidth="13"
+                  strokeOpacity="1"
+                  d="M385 395L235 245"
+                  />
+              </CloseBtn>
+              <CalendarComponent
+                calendarType={"ISO 8601"}
+                startDate={new Date()}
+                value={this.state.selectedDate}
+                onChange={this.handleChange}
+            />
+         </>
+          )}
+          
+        </LayoutWithSpinner>
       </BrowserRouter>
     );
-  }
+}
 }

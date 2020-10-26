@@ -1,5 +1,6 @@
 import styled,{css, keyframes} from 'styled-components';
 import CalendarIcon from '../../assets/date_range-black-18dp.svg';
+import InfoIcon from '../../assets/info.svg';
 
 const breatheAnimation = keyframes`
  0% { height: 50px; width: 250px; }
@@ -143,7 +144,7 @@ export const CalendarButton = styled.svg`
     width: 150px;
     position: absolute;
     height: 150px;
-    bottom: 25px;
+    bottom: 103px;
     right: 0px;
     
     .my-icon::before {
@@ -185,6 +186,77 @@ export const CalendarButton = styled.svg`
             animation-direction: forwards;
             animation-delay: 0.5s;
         }
+`;
+
+
+const dashAnimation = keyframes`
+    40% {
+        transform: scale(1.1), translate(25,25);
+    }
+    55% {
+        stroke: #ff6633;
+        transform: scale(1.1),translate(25,25);
+        
+    }
+    70% {
+        transform: scale(1.1),translate(25,25);
+    }
+    100% {
+        stroke-dashoffset: 0;
+        transform: scale(1.1),translate(25,25);
+        stroke: #cc0033;
+    }
+`
+
+
+export const CloseBtn = styled.svg`
+
+    width: 100px;
+    height: 100px;
+    right: 1px;
+    top: 39VH;
+    z-index: 1;
+    position: absolute;
+
+     &#exit-icon .left-dash .right-dash {
+        opacity: 0.5;
+        stroke-linecap:round;
+		transform-origin: center;
+		stroke-dasharray: 400;
+		stroke-dashoffset: 400;
+    }
+    &#exit-icon:hover .left-dash {
+        animation: ${dashAnimation} 0.8s ease-out forwards; 
+    }
+    &#exit-icon:hover .right-dash {
+        animation: ${dashAnimation} 1s ease-out forwards; 
+    }
+    &#exit-icon .circle {
+            opacity: 0;
+            transform-origin: center;
+    }
+    &#exit-icon:hover .circle {
+        animation: ${circleAnimation} 0.5s ease-out forwards;        
+    }
+
+
+`;
+
+export const InfoBtn = styled(InfoIcon)`
+  position: absolute;
+    width: 120px;
+    height: 120px;
+    right: 21px;
+    bottom: 24px;
+    transition: all 1s ease-out;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+   
+
+
+
 `;
 
 

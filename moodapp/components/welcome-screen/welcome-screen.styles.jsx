@@ -52,6 +52,7 @@ export const WelcomeText = styled.div`
   font-size: xx-large;
   text-align: center;
   height: 180px;
+  margin-bottom: 130px;
 `;
 
 const run = keyframes`

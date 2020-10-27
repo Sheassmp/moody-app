@@ -208,46 +208,50 @@ const dashAnimation = keyframes`
     }
 `
 
-
 export const CloseBtn = styled.svg`
 
-    width: 100px;
-    height: 100px;
-    right: 1px;
-    top: 39VH;
-    z-index: 1;
-    position: absolute;
+width: 100px;
+height: 100px;
+right: 1px;
+top: 39VH;
+z-index: 1;
+position: absolute;
 
-     &#exit-icon .left-dash .right-dash {
-        opacity: 0.5;
-        stroke-linecap:round;
-		transform-origin: center;
-		stroke-dasharray: 400;
-		stroke-dashoffset: 400;
-    }
-    &#exit-icon:hover .left-dash {
-        animation: ${dashAnimation} 0.8s ease-out forwards; 
+&#exit-icon .left-dash .right-dash {
+    opacity: 0.5;
+    stroke-linecap:round;
+    transform-origin: center;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+}
+&#exit-icon:hover .left-dash {
+    animation: ${dashAnimation} 0.8s ease-out forwards; 
     }
     &#exit-icon:hover .right-dash {
         animation: ${dashAnimation} 1s ease-out forwards; 
     }
     &#exit-icon .circle {
-            opacity: 0;
-            transform-origin: center;
+        opacity: 0;
+        transform-origin: center;
     }
     &#exit-icon:hover .circle {
         animation: ${circleAnimation} 0.5s ease-out forwards;        
     }
+    
+    
+    `;
 
+export const SkipBtn = styled(CloseBtn)`
+    top: 45px;
 
 `;
 
 export const InfoBtn = styled(InfoIcon)`
   position: absolute;
-    width: 120px;
-    height: 120px;
-    right: 21px;
-    bottom: 24px;
+  width: 120px;
+  height: 120px;
+  right: 21px;
+  bottom: 24px;
     transition: all 1s ease-out;
 
     &:hover {

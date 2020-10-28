@@ -1,46 +1,67 @@
 import React, { useState } from "react";
 import {
   InfoContainer,
-  InfoButton,
   ButtonContainer
 } from "./information-page-info.styles";
-import FloatingInfoComponent from '../floating-info/floating-info.component';
+import FloatingInfoComponent from "../floating-info/floating-info.component";
+import InfoButtonComponent from '../information-page-button/information-page-button.component';
 
+function FloatingComponent({ text }) {
 
-function FloatingComponent({text}) {
-    
-    const [showInfo, setShowInfo] = useState(false);
-    
-    return (
-     
-         showInfo ? (      
-         <>
-            <InfoButton handleClick = {() => setHidden(false)} header={header} description={desc} />
-         </>
-     ) : (
-         <>
-            <InfoButton handleClick = {() => setHidden(false)} header={header} description={desc} />
-            <FloatingInfoComponent linkTo = {linkTo} handleLinkClick={openInNewTab}  image = {image} text={text} title={title} handleClick={() => setHidden(true)} />
-          </>
-        )
+  const [showInfo, setShowInfo] = useState(false);
+
+    switch (context) {
+        case 0:
+            text = "Research"
+            break;
+        case 1:
+            text = "Contact"
+            break;
+        case 2:
+            text = "Visit"
+            break;
+        default:
+            text = ""
+            break;
+    }
+
+  return !showInfo ? (
+    <>
+      <InfoButtonComponent
+        handleClick={() => setShowInfo(true)}
+        text = {text}
         
-        )
-    }         
+        />
+    </>
+  ) : (
+    <>
+      <InfoButtonComponent
+        handleClick={() => setShowInfo(false)}
+      />
+
+      <FloatingInfoComponent
+        linkTo={linkTo}
+        handleLinkClick={openInNewTab}
+        image={image}
+        text={text}
+        title={title}
+        handleClick={() => setShowInfo(false)}
+      />
 
 
+    </>
+  );
+}
 
-const InformationPageInfo = ({ researchClick, contactClick, visitClick }) => {  
-  
+const InformationPageInfo = () => {
   return (
-
-        <InfoContainer>
-        <ButtonContainer>
-          <InfoButton>Research</InfoButton>
-          <InfoButton>Contact</InfoButton>
-          <InfoButton>Visit</InfoButton>
-        </ButtonContainer>
-      </InfoContainer>
-    
+    <InfoContainer>
+      <ButtonContainer>
+        <FloatingComponent content={0} />
+        <FloatingComponent content={1} />
+        <FloatingComponent content={2} />
+      </ButtonContainer>
+    </InfoContainer>
   );
 };
 

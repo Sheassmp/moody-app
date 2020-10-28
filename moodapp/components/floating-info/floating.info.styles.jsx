@@ -7,8 +7,23 @@ export const Container = styled.div`
     border-radius: 5px;
 `;
 
+export const Image = styled.img`
+    width: 100%;
+    height: 400px;
+`;
+
 export const BlockText = styled.p`
-    
+    text-align: center;
+    width: 75%;
+    min-height: 52px;
+`;
+
+export const TextContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: double #00000036;
 `;
 
 

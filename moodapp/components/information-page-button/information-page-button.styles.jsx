@@ -4,8 +4,8 @@ import CustomButton from '../custom-button/custom-button.component';
 
 export const InfoButton = styled(CustomButton)`
 border-radius: 50%;
-height: 400px;
-min-width: 400px;
+height: 350px;
+min-width: 350px;
 margin: 10px;
 font-size: 2rem;
 align-items: center;

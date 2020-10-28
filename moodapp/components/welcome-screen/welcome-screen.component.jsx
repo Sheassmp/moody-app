@@ -45,7 +45,7 @@ const Welcome = () => {
         setWelcomeClass(true);
         break;
       default:
-        text = "please refresh your page";
+          text=""
         break;
     }
 

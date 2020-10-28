@@ -6,22 +6,30 @@ import {
 import FloatingInfoComponent from "../floating-info/floating-info.component";
 import InfoButtonComponent from '../information-page-button/information-page-button.component';
 
-function FloatingComponent({ text }) {
+function FloatingComponent({ text, content, image, title  }) {
 
   const [showInfo, setShowInfo] = useState(false);
 
-    switch (context) {
+    switch (content) {
         case 0:
+            title=""
             text = "Research"
+            image = ""
             break;
         case 1:
             text = "Contact"
+            image = ""
+            title = ""
             break;
         case 2:
             text = "Visit"
+            image= ""
+            title= ""
             break;
         default:
             text = ""
+            image= ""
+            title= ""
             break;
     }
 
@@ -30,25 +38,23 @@ function FloatingComponent({ text }) {
       <InfoButtonComponent
         handleClick={() => setShowInfo(true)}
         text = {text}
-        
+
         />
     </>
   ) : (
     <>
+   
       <InfoButtonComponent
         handleClick={() => setShowInfo(false)}
       />
-
+ 
+  
       <FloatingInfoComponent
-        linkTo={linkTo}
-        handleLinkClick={openInNewTab}
         image={image}
         text={text}
         title={title}
         handleClick={() => setShowInfo(false)}
       />
-
-
     </>
   );
 }

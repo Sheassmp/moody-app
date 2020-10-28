@@ -19,6 +19,8 @@ export const ButtonContainer = styled.div`
     max-width: 1200px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    
 `;
 
 

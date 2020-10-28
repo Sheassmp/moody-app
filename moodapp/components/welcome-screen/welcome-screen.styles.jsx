@@ -17,7 +17,7 @@ export const WelcomeContainer = styled.div`
   
 
    &.closeMe {
-        transform: translateX(-100vw);
+        transform: translateX(-200vw);
         transition: all 2s ease-in-out;        
    }
 
@@ -34,7 +34,6 @@ export const WelcomeButton = styled.button`
   font-weight: 800;
   transition: all 0.5s ease-in-out;
   
-
   &:hover {
     color: rgba(255, 255, 255, 1);
     box-shadow: 0 5px 15px rgba(145, 92, 182, 0.4);

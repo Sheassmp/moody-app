@@ -212,8 +212,8 @@ export const CloseBtn = styled.svg`
 
 width: 100px;
 height: 100px;
-right: 1px;
-top: 39VH;
+right: 0px;
+top: 420px;
 z-index: 1;
 position: absolute;
 
@@ -241,9 +241,13 @@ position: absolute;
     
     `;
 
+
 export const SkipBtn = styled(CloseBtn)`
     top: 45px;
+`;
 
+export const CloseInfoBtn = styled(CloseBtn)`
+    top: 0;
 `;
 
 export const InfoBtn = styled(InfoIcon)`

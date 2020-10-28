@@ -6,7 +6,7 @@ import {
 import FloatingInfoComponent from "../floating-info/floating-info.component";
 import InfoButtonComponent from '../information-page-button/information-page-button.component';
 
-function FloatingComponent({ text, content, image, title  }) {
+function FloatingComponent({ text, content, image, title, type  }) {
 
   const [showInfo, setShowInfo] = useState(false);
 
@@ -14,22 +14,26 @@ function FloatingComponent({ text, content, image, title  }) {
         case 0:
             title=""
             text = "Research"
-            image = ""
+            image = "/images/visit.jpg"
+            type= text;
             break;
         case 1:
             text = "Contact"
-            image = ""
+            image = "/images/contact.jpg"
             title = ""
+            type=text;
             break;
         case 2:
             text = "Visit"
-            image= ""
+            image= "/images/visit.jpg"
             title= ""
+            type=text;
             break;
         default:
             text = ""
-            image= ""
+            image= "/images/visit.jpg"
             title= ""
+            type=text;
             break;
     }
 
@@ -50,10 +54,11 @@ function FloatingComponent({ text, content, image, title  }) {
  
   
       <FloatingInfoComponent
+        type={type}
         image={image}
         text={text}
         title={title}
-        handleClick={() => setShowInfo(false)}
+        closeClick={() => setShowInfo(false)}
       />
     </>
   );
@@ -63,9 +68,9 @@ const InformationPageInfo = () => {
   return (
     <InfoContainer>
       <ButtonContainer>
-        <FloatingComponent content={0} />
-        <FloatingComponent content={1} />
-        <FloatingComponent content={2} />
+        <FloatingComponent  content={0} />
+        <FloatingComponent  content={1} />
+        <FloatingComponent  content={2} />
       </ButtonContainer>
     </InfoContainer>
   );

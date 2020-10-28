@@ -45,7 +45,7 @@ const Welcome = () => {
         setWelcomeClass(true);
         break;
       default:
-          text=""
+        text = "please refresh your page";
         break;
     }
 
@@ -71,8 +71,8 @@ const Welcome = () => {
         <WelcomeButton onClick={() => handleClick()}>next</WelcomeButton>
         <SkipBtn
                onClick={setWelcomeClass}
-                id="exit-icon"
-                viewBox="0 0 640 640"
+               id="exit-icon"
+               viewBox="0 0 640 640"
                 width="640"
                 height="640"
                 >

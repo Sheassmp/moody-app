@@ -3,7 +3,7 @@ import CustomButton from '../custom-button/custom-button.component';
 
 
 export const InfoButton = styled(CustomButton)`
-border-radius: 50%;
+/* border-radius: 50%; */
 height: 350px;
 min-width: 350px;
 margin: 10px;
@@ -19,7 +19,8 @@ transition: all 0.4s ease-in-out;
     box-shadow:0 30px 40px 0 rgba(16, 36, 94, 0.2);
     border: none;
     transform: scale(0.95);
-    color: grey;
+    color: whitesmoke;
+    border-radius: 50%;
 }
 
 &:focus {

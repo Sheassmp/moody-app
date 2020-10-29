@@ -3,17 +3,27 @@ import { Parallax } from "react-parallax";
 
 import {
   SectionContainer,
-  Container
+  Container,
+  Details,
+  DetailsHeader,
+  DetailsContainer
 } from "../floating-info/floating.info.styles";
 import { CloseInfoBtn } from "../custom-button/custom-button.styles";
 import SectionBox from "../section-box/section-box.component";
 
 //TODO create a component to be populated on click according to section
 
-const FloatingInfoComponent = ({ linkTo,closeClick, textInfo, image, type }) => {
- 
-  var tempHeaders = [], tempDesc = [], tempLinks = [];
-
+const FloatingInfoComponent = ({
+  closeClick,
+  textInfo,
+  image,
+  type,
+}) => {
+var sectionHeaders = [],
+    sectionDesc = [],
+    sectionLinks = [],
+    fullDescription = "This is a full description"
+    ;
 
   var researchHeaders = [
     "The Maori Division of Time",
@@ -21,7 +31,7 @@ const FloatingInfoComponent = ({ linkTo,closeClick, textInfo, image, type }) => 
     "Mahi Māra: Living by Maramataka Māori in an urban setting",
     "Maramataka: The Maori Moon Calendar.",
     "Tangaroa Ara Rau: Tangaroa the Atua of Human Movement.",
-    "Ancient Egyptian Calendars of Lucky and Unlucky Days."
+    "Ancient Egyptian Calendars of Lucky and Unlucky Days.",
   ];
 
   var researchDesc = [
@@ -30,36 +40,42 @@ const FloatingInfoComponent = ({ linkTo,closeClick, textInfo, image, type }) => 
     "Hoeta, A. (2020).",
     "Roberts, M., Weko, F., Clarke, L., (2006)",
     "Hanara, B., & Jackson, A. (2019).",
-    "Porceddu, S., Jetsu, L., Markkanen, T., & Toivari-Viitala, J. (2008)."
-  ]
+    "Porceddu, S., Jetsu, L., Markkanen, T., & Toivari-Viitala, J. (2008).",
+  ];
 
   var researchLinks = [
     "http://nzetc.victoria.ac.nz/tm/scholarly/tei-BesTime-t1-body-d1-d3.html",
-    "Hikuroa, D. (2017). Mātauranga Māori—the ūkaipō of knowledge in New Zealand. In Journal of the Royal Society of New Zealand (Vol. 47, Issue 1, pp. 5–10). https://doi.org/10.1080/03036758.2016.1252407",
+    "https://cdn.auckland.ac.nz/assets/arts/research-centres/ppi/policy-briefings/PPI%20Briefing%20Hikuroa%202018.pdf",
     "https://toitangata.co.nz/2020/04/29/mahi-mara-living-by-maramataka-maori-in-an-urban-setting/",
     "http://researcharchive.lincoln.ac.nz/handle/10182/155",
     "http://www.maramatanga.ac.nz/sites/default/files/project-reports/NPM_ngaAkonga_HanaraJackson_18INT01%20%28003%29.pdf",
-    "https://www.mv.helsinki.fi/home/jetsu/papers/egypt1.pdf"
-  ]
+    "https://www.mv.helsinki.fi/home/jetsu/papers/egypt1.pdf",
+  ];
+
+  var contactHeaders = [];
+  var contactDesc = [];
+  var contactLinks = [];
+
+  var visitHeaders = [];
+  var visitDesc = [];
+  var visitLinks = []; 
+
+
 
   if (type === "Research") {
-    tempHeaders = researchHeaders;
-    tempDesc = researchDesc;
-    tempLinks = researchLinks;
+    sectionHeaders = researchHeaders;
+    sectionDesc = researchDesc;
+    sectionLinks = researchLinks;
   } else if (type === "Contact") {
-    tempHeaders = researchHeaders;
-    tempDesc = researchDesc;
-    tempLinks = researchLinks;
+    sectionHeaders = researchHeaders;
+    sectionDesc = researchDesc;
+    sectionLinks = researchLinks;
   } else if (type === "Visit") {
-    tempHeaders = researchHeaders;
-    tempDesc = researchDesc;
-    tempLinks = researchLinks;
+    sectionHeaders = researchHeaders;
+    sectionDesc = researchDesc;
+    sectionLinks = researchLinks;
   }
 
-  
-
-
-   
   return (
     <Container>
       <CloseInfoBtn
@@ -99,21 +115,63 @@ const FloatingInfoComponent = ({ linkTo,closeClick, textInfo, image, type }) => 
       </CloseInfoBtn>
       <Parallax style={{ height: `80vh` }} bgImage={image} strength={500} />
       <SectionContainer>
-        <SectionBox handleClick = {console.log("clicked")}  header={tempHeaders[0]} description={tempDesc[0]} />
-        <SectionBox handleClick = {console.log("clicked")}  header={tempHeaders[1]} description={tempDesc[1]} />
-        <SectionBox handleClick = {console.log("clicked")}  header={tempHeaders[2]} description={tempDesc[2]} />
-        <SectionBox handleClick = {console.log("clicked")}  header={tempHeaders[3]} description={tempDesc[3]} />
-        <SectionBox handleClick = {console.log("clicked")}  header={tempHeaders[4]} description={tempDesc[4]} />
-        <SectionBox handleClick = {console.log("clicked")}  header={tempHeaders[5]} description={tempDesc[5]} />
+        <SectionBox
+          handleClick={() => {
+            var win = window.open(sectionLinks[0], "_blank");
+            win.focus();
+          }}
+          header={sectionHeaders[0]}
+          description={sectionDesc[0]}
+        />
+        <SectionBox
+           handleClick={() => {
+            var win = window.open(sectionLinks[1], "_blank");
+            win.focus();
+          }}
+          header={sectionHeaders[1]}
+          description={sectionDesc[1]}
+        />
+        <SectionBox
+           handleClick={() => {
+            var win = window.open(sectionLinks[2], "_blank");
+            win.focus();
+          }}
+          header={sectionHeaders[2]}
+          description={sectionDesc[2]}
+        />
+        <SectionBox
+           handleClick={() => {
+            var win = window.open(sectionLinks[3], "_blank");
+            win.focus();
+          }}
+          header={sectionHeaders[3]}
+          description={sectionDesc[3]}
+        />
+        <SectionBox
+        handleClick={() => {
+            var win = window.open(sectionLinks[4], "_blank");
+            win.focus();
+          }}
+          header={sectionHeaders[4]}
+          description={sectionDesc[4]}
+        />
+        <SectionBox
+            handleClick={() => {
+            var win = window.open(sectionLinks[5], "_blank");
+            win.focus();
+          }}
+          header={sectionHeaders[5]}
+          description={sectionDesc[5]}
+        />
+      </SectionContainer>
+      <SectionContainer>
+          <DetailsHeader>{type}</DetailsHeader>
+          <Details>
+          {fullDescription}
+          </Details>
       </SectionContainer>
     </Container>
   );
 };
-function openInNewTab(link) {
-     
-    window.open(link, '_blank');
-    
-}
-
 
 export default FloatingInfoComponent;

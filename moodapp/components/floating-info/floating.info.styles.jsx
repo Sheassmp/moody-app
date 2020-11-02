@@ -5,7 +5,7 @@ export const Container = styled.div`
     flex-direction: column;
     position:absolute;
     /* width: 100vw; */
-    height: 300%;
+    height: 400%;
     background: linear-gradient(360deg,#151111 10%,#a2a2a2 360%);
     text-align:center;
     top: 47px;

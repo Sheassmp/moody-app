@@ -7,11 +7,11 @@ import {
   SectionHeader,
 } from "./section-box.styles"
 
-const SectionBox = ({header, description, handleClick}) => {
+const SectionBox = ({header, description, handleClick, style}) => {
 
   return (
     <SectionContainer>
-      <SectionHeader onClick={handleClick} >{header}</SectionHeader>
+      <SectionHeader style={style} onClick={handleClick} >{header}</SectionHeader>
       <SectionDescription>{description}</SectionDescription>
     </SectionContainer>
   )

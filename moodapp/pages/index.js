@@ -41,6 +41,7 @@ export default class Home extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.SetPrediction = this.SetPrediction.bind(this);
      this.showInfo = this.showInfo.bind(this);
+     this.clicked = this.clicked(this);
   }
 
   componentDidMount() {
@@ -70,6 +71,10 @@ export default class Home extends React.Component {
         showInfo: !state.showInfo
       }));
     }
+
+    clicked() {
+      console.log("clickity");
+    }
   
   //Step 1. Get the current moon phase according to time
   getMoonPhase() {
@@ -79,11 +84,7 @@ export default class Home extends React.Component {
     var day = date.getDate();
     var month = date.getMonth();
     var year = date.getFullYear();
-    var c = 0,
-      e = 0,
-      jd = 0,
-      b = 0,
-      tempStart;
+    var yearsLapsed = 0, monthsLapsed = 0, daysLapsed = 0, b = 0, tempStart;
 
     if (month < 3) {
       year--;
@@ -91,26 +92,27 @@ export default class Home extends React.Component {
     }
 
     ++month;
-    c = 365.25 * year;
-    e = 30.6 * month;
-    //jd is total days elapsed
-    jd = c + e + day - 694039.09;
+    yearsLapsed = 365.25 * year;
+    monthsLapsed = 30.6 * month;
+    //daysLapsed is total days elapsed
+    daysLapsed = yearsLapsed + monthsLapsed + day - 694039.09;
     //divide by the moon cycle
-    jd /= 29.5305882;
-    //int(jd) -> b, take fraction part of jd
+    daysLapsed /= 29.5305882;
+    //int(daysLapsed) -> b, take fraction part of daysLapsed
     //to leave b as the remaining int
-    var leng = jd.toString();
+    var leng = daysLapsed.toString();
     b = parseInt(leng);
-    //subtract b from jd to leave fraction
-    jd -= b;
+    //subtract b from daysLapsed to leave fraction
+    daysLapsed -= b;
     //assign fraction to tempStart for later use
-    tempStart = jd;
+    tempStart = daysLapsed;
     //scale fraction from 0-8 and round
-    b = Math.round(jd * 8);
+    b = Math.round(daysLapsed * 8);
+
     if (b >= 8) {
       b = 0;
     }
-
+    //switch case to set moonphase
     switch (b) {
       case 0:
         moon = "New Moon";
@@ -213,66 +215,66 @@ export default class Home extends React.Component {
   }
 
   //Step 2. get the prediction according to fraction generated from getMoonPhase();
-  setEnergy(moonRotation) {
+  setEnergy(moonRotationFraction) {
     var prediction = "";
 
-    if (moonRotation > 0.0 && moonRotation < 0.056) {
+    if (moonRotationFraction > 0.0 && moonRotationFraction < 0.056) {
       prediction = "3";
-    } else if (moonRotation > 0.056 && moonRotation < 0.089) {
+    } else if (moonRotationFraction > 0.056 && moonRotationFraction < 0.089) {
       prediction = "4";
-    } else if (moonRotation > 0.09 && moonRotation < 0.123) {
+    } else if (moonRotationFraction > 0.09 && moonRotationFraction < 0.123) {
       prediction = "5";
-    } else if (moonRotation > 0.124 && moonRotation < 0.158) {
+    } else if (moonRotationFraction > 0.124 && moonRotationFraction < 0.158) {
       prediction = "6";
-    } else if (moonRotation > 0.158 && moonRotation < 0.192) {
+    } else if (moonRotationFraction > 0.158 && moonRotationFraction < 0.192) {
       prediction = "7";
-    } else if (moonRotation > 0.192 && moonRotation < 0.225) {
+    } else if (moonRotationFraction > 0.192 && moonRotationFraction < 0.225) {
       prediction = "8";
-    } else if (moonRotation > 0.225 && moonRotation < 0.259) {
+    } else if (moonRotationFraction > 0.225 && moonRotationFraction < 0.259) {
       prediction = "9";
-    } else if (moonRotation > 0.259 && moonRotation < 0.293) {
+    } else if (moonRotationFraction > 0.259 && moonRotationFraction < 0.293) {
       prediction = "10";
-    } else if (moonRotation > 0.293 && moonRotation < 0.327) {
+    } else if (moonRotationFraction > 0.293 && moonRotationFraction < 0.327) {
       prediction = "11";
-    } else if (moonRotation > 0.327 && moonRotation < 0.36) {
+    } else if (moonRotationFraction > 0.327 && moonRotationFraction < 0.36) {
       prediction = "12";
-    } else if (moonRotation > 0.36 && moonRotation < 0.395) {
+    } else if (moonRotationFraction > 0.36 && moonRotationFraction < 0.395) {
       prediction = "13";
-    } else if (moonRotation > 0.395 && moonRotation < 0.43) {
+    } else if (moonRotationFraction > 0.395 && moonRotationFraction < 0.43) {
       prediction = "14";
-    } else if (moonRotation > 0.43 && moonRotation < 0.464) {
+    } else if (moonRotationFraction > 0.43 && moonRotationFraction < 0.464) {
       prediction = "15";
-    } else if (moonRotation > 0.464 && moonRotation < 0.484) {
+    } else if (moonRotationFraction > 0.464 && moonRotationFraction < 0.484) {
       prediction = "16";
-    } else if (moonRotation > 0.484 && moonRotation < 0.547) {
+    } else if (moonRotationFraction > 0.484 && moonRotationFraction < 0.547) {
       prediction = "17";
-    } else if (moonRotation > 0.547 && moonRotation < 0.58) {
+    } else if (moonRotationFraction > 0.547 && moonRotationFraction < 0.58) {
       prediction = "18";
-    } else if (moonRotation > 0.58 && moonRotation < 0.615) {
+    } else if (moonRotationFraction > 0.58 && moonRotationFraction < 0.615) {
       prediction = "19";
-    } else if (moonRotation > 0.615 && moonRotation < 0.648) {
+    } else if (moonRotationFraction > 0.615 && moonRotationFraction < 0.648) {
       prediction = "20";
-    } else if (moonRotation > 0.648 && moonRotation < 0.684) {
+    } else if (moonRotationFraction > 0.648 && moonRotationFraction < 0.684) {
       prediction = "21";
-    } else if (moonRotation > 0.684 && moonRotation < 0.717) {
+    } else if (moonRotationFraction > 0.684 && moonRotationFraction < 0.717) {
       prediction = "22";
-    } else if (moonRotation > 0.717 && moonRotation < 0.75) {
+    } else if (moonRotationFraction > 0.717 && moonRotationFraction < 0.75) {
       prediction = "23";
-    } else if (moonRotation > 0.75 && moonRotation < 0.782) {
+    } else if (moonRotationFraction > 0.75 && moonRotationFraction < 0.782) {
       prediction = "24";
-    } else if (moonRotation > 0.782 && moonRotation < 0.818) {
+    } else if (moonRotationFraction > 0.782 && moonRotationFraction < 0.818) {
       prediction = "25";
-    } else if (moonRotation > 0.818 && moonRotation < 0.85) {
+    } else if (moonRotationFraction > 0.818 && moonRotationFraction < 0.85) {
       prediction = "26";
-    } else if (moonRotation > 0.85 && moonRotation < 0.885) {
+    } else if (moonRotationFraction > 0.85 && moonRotationFraction < 0.885) {
       prediction = "27";
-    } else if (moonRotation > 0.885 && moonRotation < 0.92) {
+    } else if (moonRotationFraction > 0.885 && moonRotationFraction < 0.92) {
       prediction = "28";
-    } else if (moonRotation > 0.92 && moonRotation < 0.934) {
+    } else if (moonRotationFraction > 0.92 && moonRotationFraction < 0.934) {
       prediction = "29";
-    } else if (moonRotation > 0.934 && moonRotation < 0.97) {
+    } else if (moonRotationFraction > 0.934 && moonRotationFraction < 0.97) {
       prediction = "1";
-    } else if (moonRotation > 0.97 && moonRotation < 0.999) {
+    } else if (moonRotationFraction > 0.97 && moonRotationFraction < 0.999) {
       prediction = "2";
     } else {
       prediction = "error";
@@ -294,6 +296,8 @@ export default class Home extends React.Component {
     });
   }
 
+
+
   render() {
     const { prediction } = this.state;
     const { loading } = this.state;
@@ -303,7 +307,7 @@ export default class Home extends React.Component {
       <BrowserRouter>
         <Welcome />
         {showInfo ? (
-            <InformationPageInfo />
+            <InformationPageInfo  returnClick ={() =>  this.showInfo(false)} />
           ) : (null) }
         <LayoutWithSpinner isLoading={loading} home>
           <Head>

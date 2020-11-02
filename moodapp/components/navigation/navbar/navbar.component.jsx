@@ -9,7 +9,7 @@ const NavBar = ({home}) => (
                 <NavLogo src ="/images/mood.png"/>
             </NavLogoContainer>
             <NavItemList>
-            {
+            {/* {
                 home ? (
                 <Link href="/information-page"  >
                     <NavItem>information</NavItem>
@@ -21,7 +21,7 @@ const NavBar = ({home}) => (
                 </Link>
                 )
             }
-               
+                */}
             </NavItemList>
         </NavContent>
     </NavContainer>

@@ -5,4 +5,5 @@ const InfoBtnComponent = ({text, handleClick}) => {
           <InfoButton onClick = {handleClick} >{text}</InfoButton>
     )
 }
+
  export default InfoBtnComponent;

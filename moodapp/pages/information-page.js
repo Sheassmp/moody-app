@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout/layout";
 import utilStyles from "../styles/utils.module.css";
-import {InfoContainer,InfoButton, InfoWrapper} from '../components/information-page-info/information-page-info.styles';
+import {InfoContainer, InfoWrapper} from '../components/information-page-info/information-page-info.styles';
 
 export default class InformationPage extends React.Component {
   constructor(){
@@ -30,9 +30,9 @@ export default class InformationPage extends React.Component {
 
       </section>
         <InfoContainer>
-          <InfoButton onClick={this.AlertInfo}>Research</InfoButton>
+          {/* <InfoButton onClick={this.AlertInfo}>Research</InfoButton>
           <InfoButton onClick={this.AlertInfo}>Contact</InfoButton>
-          <InfoButton onClick={this.AlertInfo}>Visit</InfoButton>
+          <InfoButton onClick={this.AlertInfo}>Visit</InfoButton> */}
         </InfoContainer>
     </Layout>
     );

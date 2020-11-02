@@ -25,22 +25,28 @@ var sectionHeaders = [],
     fullDescription = "This is a full description"
     ;
 
+
+  var researchFDescription = "When referring to the lunar calendars in history you will find hundreds of different iterations all measuring time by the phases of the moon. " 
+                           + "Yet when looking at lunar calendars in relation to mood and behaviour the information is scarcer within cited research texts, but it is present as shown in recordings of Elsdon (2018) "
+                           + "in 1959 in relation to Maramataka, as well as additional alternative examples, such as within ancient Egypt where a study conducted by Porceddu et al.(2008) " 
+                           + "observed the relation of the ancient Egyptians and their predicted unlucky and lucky days. Maramataka in particular has gained momentum recently in regard to linking historical beliefs and " 
+                           + "practices to be used in todays settings, The following above links will show certain papers I have found in relation to these points"; 
   var researchHeaders = [
     "The Maori Division of Time",
     "Mātauranga Māori—the ūkaipō of knowledge in New Zealand.",
-    "Mahi Māra: Living by Maramataka Māori in an urban setting",
+    "Middle Assyrian Lunar Calendar and Chronology. In Living the Lunar Calendar",
     "Maramataka: The Maori Moon Calendar.",
     "Tangaroa Ara Rau: Tangaroa the Atua of Human Movement.",
     "Ancient Egyptian Calendars of Lucky and Unlucky Days.",
   ];
 
   var researchDesc = [
-    "Elsdon B. (2018)",
+    "Elsdon B. (1959)",
     "Hikuroa, D. (2017).",
-    "Hoeta, A. (2020).",
-    "Roberts, M., Weko, F., Clarke, L., (2006)",
-    "Hanara, B., & Jackson, A. (2019).",
-    "Porceddu, S., Jetsu, L., Markkanen, T., & Toivari-Viitala, J. (2008).",
+    "Bloch, Y. (2012). - earliest iterations of lunar calendars ",
+    "Roberts, M., Weko, F., Clarke, L., (2006) -",
+    "Hanara, B., & Jackson, A. (2019). -",
+    "Porceddu, S., Jetsu, L., Markkanen, T., & Toivari-Viitala, J. (2008). -",
   ];
 
   var researchLinks = [
@@ -52,28 +58,88 @@ var sectionHeaders = [],
     "https://www.mv.helsinki.fi/home/jetsu/papers/egypt1.pdf",
   ];
 
-  var contactHeaders = [];
-  var contactDesc = [];
-  var contactLinks = [];
+  var contactFDescription = "The main reason for building Moody has been on not creating one true way to understand what we will feel according to the moon, but to bring the " 
+                             + "understanding of the different emotions we all may feel through daily life." +
+                             "Providing a way to possibly reduce stress or even provide a interesting alternative to other atrological beliefs that many utlize already within their daily lives" +
+                             "Above are some services offering help to those who may need it and provide links to possible ways to aid those who also want to help."; 
 
-  var visitHeaders = [];
-  var visitDesc = [];
-  var visitLinks = []; 
+  var contactHeaders = [
+    "Mental Health Organisation",
+    "Mental Health Organisation - Wellbeing",
+    "Mental Health Organisation - Fundraising",
+    "Auckland DHB Community Mental Health Services (Adult)",
+    "HealthEd",
+    "Ministry of health"
+  ];
+
+  var contactDesc = [
+    "Donate to now to a good cause",
+    "Create your own fundraiser",
+    "A guide to understanding your wellbeing",
+    "Contact information for adults",
+    "Helplines and mental health services",
+    "Resources for all ages"
+  ];
+
+  var contactLinks = [
+    "https://events.mentalhealth.org.nz/donate",
+    "https://events.mentalhealth.org.nz/create-your-own",
+    "https://www.mentalhealth.org.nz/home/ways-to-wellbeing/",
+    "https://www.healthpoint.co.nz/public/mental-health-specialty/auckland-dhb-community-mental-health-services/",
+    "https://www.healthed.govt.nz/resource/helplines-and-mental-health-services",
+    "https://www.health.govt.nz/your-health/services-and-support/health-care-services/mental-health-services/mental-health-services-where-get-help"
+   
+  ];
+ 
+  var resourcesFDescription = "The following are different resources found within New Zealand that offer interesting incite into the workings of Maramataka." +
+                                "Such as learning resources, Museums and news columns"; 
+
+  var resourcesHeaders = [
+    "Te Papa",
+    "Te Papa - Maramataka Dial",
+    "Te Papa - Learning Resources",
+    "Learning to live by the maramataka: Whiringa-ā-nuku",
+    "Museums Wellington",
+    "Mental Health Organization - Workplace"
+  ];
+
+  var resourcesDesc = [
+    "Visit New Zealands largest museum",
+    "Download Te Papas dial",
+    "Find Maramataka learning aids",
+    "Column by Ayla Hoeta",
+    "Different museums in relation to Maramataka",
+    "Maramataka in the workplace"
+  
+  ];
+
+  var resourcesLinks = [
+    "https://www.tepapa.govt.nz/",
+    "https://www.tepapa.govt.nz/discover-collections/read-watch-play/maori/matariki-maori-new-year/how-use-maramataka-maori-lunar",
+    "https://www.tepapa.govt.nz/learn/for-educators/teaching-resources/maramataka-maori-calendar-learning-resource",
+    "https://thespinoff.co.nz/author/ayla-hoeta/",
+    "https://www.museumswellington.org.nz/matariki-the-maori-phases-of-the-moon/",
+    "https://www.mentalhealth.org.nz/get-help/getting-through-together/workplace-wellbeing/finding-wellbeing-through-maramataka/"
+
+  ]; 
 
 
 
-  if (type === "Research") {
+  if (type === "Cited Research") {
     sectionHeaders = researchHeaders;
     sectionDesc = researchDesc;
     sectionLinks = researchLinks;
-  } else if (type === "Contact") {
-    sectionHeaders = researchHeaders;
-    sectionDesc = researchDesc;
-    sectionLinks = researchLinks;
-  } else if (type === "Visit") {
-    sectionHeaders = researchHeaders;
-    sectionDesc = researchDesc;
-    sectionLinks = researchLinks;
+    fullDescription = researchFDescription;
+  } else if (type === "Mental Health Aid") {
+    sectionHeaders = contactHeaders;
+    sectionDesc = contactDesc;
+    sectionLinks = contactLinks;
+    fullDescription = contactFDescription;
+  } else if (type === "Available Resources") {
+    sectionHeaders = resourcesHeaders;
+    sectionDesc = resourcesDesc;
+    sectionLinks = resourcesLinks;
+    fullDescription = resourcesFDescription;
   }
 
   return (
@@ -164,12 +230,17 @@ var sectionHeaders = [],
           description={sectionDesc[5]}
         />
       </SectionContainer>
-      <SectionContainer>
+      <DetailsContainer>
           <DetailsHeader>{type}</DetailsHeader>
           <Details>
           {fullDescription}
           </Details>
-      </SectionContainer>
+      </DetailsContainer>
+      <DetailsContainer>
+          <DetailsHeader>Code to predict moon rotation</DetailsHeader>
+          <img style={{width: "570px", height: "967px", margin: "auto", marginBottom: "40px", border: "double" }} src = {"/images/step1.png"} />
+          <img style={{width: "570px", height: "856px", margin: "auto", marginBottom: "40px", border: "double" }} src = {"/images/steps2and3.png"} />
+      </DetailsContainer>
     </Container>
   );
 };

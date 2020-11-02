@@ -31,12 +31,13 @@ transition: all 0.4s ease-in-out;
 
 export const ReturnButton = styled(CustomButton)`
 /* border-radius: 50%; */
-height: 50px;
-width: 80px;
+height: 4%;
+width: 4%;
+min-width: 6%;
 margin: 10px;
 position: absolute;
-top: 10vh;
-left: 0;
+bottom: 3vh;
+right: 2vw;
 font-size: large;
 align-items: center;
 background:linear-gradient(to bottom,rgba(212,228,239,1) 0%,rgb(102 112 119) 100%);

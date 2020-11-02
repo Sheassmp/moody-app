@@ -213,7 +213,7 @@ export const CloseBtn = styled.svg`
 width: 100px;
 height: 100px;
 right: 0px;
-top: 420px;
+top: 45vh;
 z-index: 1;
 position: absolute;
 

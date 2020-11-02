@@ -18,8 +18,8 @@ export const MaramatakaDayText = styled.span`
 `;
 
 export const TextBoxContainer = styled.div`
-    width: 800px;
-    height: 250px;
+    width: 46vw;
+    height: 25vh;
     border-radius: 25px;
     position: absolute;
     top: 62vh;

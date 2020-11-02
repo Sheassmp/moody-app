@@ -1,6 +1,7 @@
 .container {
     max-width: 34rem;
     max-height: 80vh;
+    min-height: 81vh;
     padding: 0 1 rem;
     margin: 1.6rem auto 5rem;
     padding-top: 25px;
@@ -25,8 +26,8 @@
 
 
 .headerHomeImage {
-  width: 800px;
-  height: 800px;
+  width: 45vw;
+  height: 45vw;
   justify-content: center;
   -webkit-box-shadow: 14px 10px 23px -6px rgba(0,0,0,0.75);
   -moz-box-shadow: 14px 10px 23px -6px rgba(0,0,0,0.75);

@@ -11,8 +11,8 @@ const CalendarComponent = ({onChange,value, clickDayFunction, calendarType, star
         className={utilStyles.calendarClass}
         value={value}
         onChange={onChange}
-        minDate={new Date('January 1,  2020 23:15:30')}
-        maxDate={new Date('December 30, 2020 23:15:30')}
+        minDate={new Date('January 1,  1940 23:15:30')}
+        maxDate={new Date('December 30, 2050 23:15:30')}
     />
 );
 

@@ -12,7 +12,7 @@ import {
 } from "../components/custom-button/custom-button.styles";
 import Welcome from "../components/welcome-screen/welcome-screen.component";
 import InformationPageInfo from "../components/information-page-info/information-page-info.component";
-import InfoIcon from '../assets/info.svg';
+import InfoIcon from "../assets/info.svg";
 
 const LayoutWithSpinner = WithSpinner(Layout);
 
@@ -33,15 +33,14 @@ export default class Home extends React.Component {
       },
       showInfo: false
     };
-    
+
     this.setHidden = this.setHidden.bind(this);
 
     this.getMoonPhase = this.getMoonPhase.bind(this);
     this.setEnergy = this.setEnergy.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.SetPrediction = this.SetPrediction.bind(this);
-     this.showInfo = this.showInfo.bind(this);
-     this.clicked = this.clicked(this);
+    this.showInfo = this.showInfo.bind(this);
   }
 
   componentDidMount() {
@@ -55,6 +54,7 @@ export default class Home extends React.Component {
   }
 
   handleChange(date) {
+    console.log(date);
     this.setState(
       {
         selectedDate: date
@@ -66,16 +66,11 @@ export default class Home extends React.Component {
   }
 
   showInfo() {
-      console.log("clicked");
     this.setState(state => ({
-        showInfo: !state.showInfo
-      }));
-    }
+      showInfo: !state.showInfo
+    }));
+  }
 
-    clicked() {
-      console.log("clickity");
-    }
-  
   //Step 1. Get the current moon phase according to time
   getMoonPhase() {
     const date = this.state.selectedDate;
@@ -84,7 +79,11 @@ export default class Home extends React.Component {
     var day = date.getDate();
     var month = date.getMonth();
     var year = date.getFullYear();
-    var yearsLapsed = 0, monthsLapsed = 0, daysLapsed = 0, b = 0, tempStart;
+    var yearsLapsed = 0,
+      monthsLapsed = 0,
+      daysLapsed = 0,
+      b = 0,
+      tempStart;
 
     if (month < 3) {
       year--;
@@ -272,7 +271,9 @@ export default class Home extends React.Component {
       prediction = "28";
     } else if (moonRotationFraction > 0.92 && moonRotationFraction < 0.934) {
       prediction = "29";
-    } else if (moonRotationFraction > 0.934 && moonRotationFraction < 0.97) {
+    } else if (moonRotationFraction > 0.934 && moonRotationFraction < 0.954) {
+      prediction = "1";
+    } else if (moonRotationFraction > 0.954 && moonRotationFraction < 0.97) {
       prediction = "1";
     } else if (moonRotationFraction > 0.97 && moonRotationFraction < 0.999) {
       prediction = "2";
@@ -296,8 +297,6 @@ export default class Home extends React.Component {
     });
   }
 
-
-
   render() {
     const { prediction } = this.state;
     const { loading } = this.state;
@@ -307,33 +306,31 @@ export default class Home extends React.Component {
       <BrowserRouter>
         <Welcome />
         {showInfo ? (
-            <InformationPageInfo  returnClick ={() =>  this.showInfo(false)} />
-          ) : (null) }
+          <InformationPageInfo returnClick={() => this.showInfo(false)} />
+        ) : null}
         <LayoutWithSpinner isLoading={loading} home>
           <Head>
             <title>{siteTitle}</title>
           </Head>
-        
-            <>
-              <HomeInfo
-                title={prediction === undefined ? "Welcome!" : prediction.title}
-                dateText={this.state.selectedDate.toDateString()}
-                genText={
-                  prediction === undefined
-                    ? "Whats your mood today?"
-                    : prediction.desc
-                }
-                moonPhaseText={this.state.moonPhase}
-                maramatakaDayText={
-                  prediction === undefined ? "" : prediction.title
-                }
-              />
 
-                
-            </>
-        
+          <>
+            <HomeInfo
+              title={prediction === undefined ? "Welcome!" : prediction.title}
+              dateText={this.state.selectedDate.toDateString()}
+              genText={
+                prediction === undefined
+                  ? "Whats your mood today?"
+                  : prediction.desc
+              }
+              moonPhaseText={this.state.moonPhase}
+              maramatakaDayText={
+                prediction === undefined ? "" : prediction.title
+              }
+            />
+          </>
+
           {this.state.hidden ? (
-              <>
+            <>
               <InfoBtn onClick={this.showInfo} />
               <CalendarButton
                 onClick={this.setHidden}
@@ -341,42 +338,42 @@ export default class Home extends React.Component {
                 id="my-icon"
                 viewBox="0 0 75 75"
                 focusable="false"
-               >
-              <circle
-                cx="37.25"
-                cy="37.25"
-                r="20"
-                fillOpacity="0"
-                className="circle"
-                strokeWidth="5px"
-              />
-              <polyline
-                className="checkmark"
-                points="11.09 18.5325 15.51125 22.95 25.17125 13.29"
-                transform="translate(20, 20)"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="4px"
-                stroke="#21b587"
-                fillOpacity="0"
-              />
-              <path
-                focusable="false"
-                transform="translate(25.5, 25)"
-                d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"
-              />
-            </CalendarButton>
+              >
+                <circle
+                  cx="37.25"
+                  cy="37.25"
+                  r="20"
+                  fillOpacity="0"
+                  className="circle"
+                  strokeWidth="5px"
+                />
+                <polyline
+                  className="checkmark"
+                  points="11.09 18.5325 15.51125 22.95 25.17125 13.29"
+                  transform="translate(20, 20)"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="4px"
+                  stroke="#21b587"
+                  fillOpacity="0"
+                />
+                <path
+                  focusable="false"
+                  transform="translate(25.5, 25)"
+                  d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"
+                />
+              </CalendarButton>
             </>
           ) : (
-              <>
-              <InfoBtn id= "info-button" onClick= {this.showInfo} />
+            <>
+              <InfoBtn id="info-button" onClick={this.showInfo} />
               <CloseBtn
                 onClick={this.setHidden}
                 id="exit-icon"
                 viewBox="0 0 640 640"
                 width="640"
                 height="640"
-                >
+              >
                 <path
                   className="circle"
                   opacity="1"
@@ -385,7 +382,7 @@ export default class Home extends React.Component {
                   strokeWidth="13"
                   strokeOpacity="1"
                   d="M435 320C435 388.99 378.99 445 310 445C241.01 445 185 388.99 185 320C185 251.01 241.01 195 310 195C378.99 195 435 251.01 435 320Z"
-                  />
+                />
                 <path
                   className="right-dash"
                   opacity="1"
@@ -394,7 +391,7 @@ export default class Home extends React.Component {
                   strokeWidth="13"
                   strokeOpacity="1"
                   d="M385 245L235 395"
-                  />
+                />
                 <path
                   className="left-dash"
                   opacity="1"
@@ -403,19 +400,18 @@ export default class Home extends React.Component {
                   strokeWidth="13"
                   strokeOpacity="1"
                   d="M385 395L235 245"
-                  />
+                />
               </CloseBtn>
               <CalendarComponent
                 calendarType={"ISO 8601"}
                 startDate={new Date()}
                 value={this.state.selectedDate}
                 onChange={this.handleChange}
-            />
-         </>
+              />
+            </>
           )}
-          
         </LayoutWithSpinner>
       </BrowserRouter>
     );
-}
+  }
 }

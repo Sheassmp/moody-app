@@ -10,9 +10,19 @@ const breatheAnimation = keyframes`
 
 
 export const MoonImg = styled.img`
-    /* animation: ${breatheAnimation};
-    animation-duration: 8s;
-    animation-iteration-count: infinite; */
+
+    width: 41vw;
+  height: 41vw;
+  justify-content: center;
+  -webkit-box-shadow: 14px 10px 23px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 14px 10px 23px -6px rgba(0,0,0,0.75);
+  box-shadow: 14px 10px 23px -6px rgba(0,0,0,0.75);
+  border-radius: 50%;
+
+  @media (max-width: 768px) {
+    width: 89vw;
+    height: 89vw;
+  }
 `;
 
 export const HomeInfoContainer = styled.div`
@@ -26,8 +36,8 @@ export const PhotoText = styled.p`
     flex-direction: column;
     align-items: center;
     position: absolute;
-    bottom: 10px;
-    left: 8px;
+    bottom: 0;
+    left: 0;
 
     color: white;
     box-shadow:0 30px 40px 0 rgba(16, 36, 94, 0.2);
@@ -36,5 +46,35 @@ export const PhotoText = styled.p`
     &:hover {
         opacity:1;
     }
+
+    @media (max-width: 768px) {
+       bottom:41.5vh;
+        left: 32%;
+        font-size: x-small;
+    }
 `;
 
+
+export const HeaderText = styled.h1`
+    font-size: 8vw;
+    text-align: center;
+    text-decoration: underline #f8f8f8;
+    font-weight: 600;
+    top: 23vh;
+    position: absolute;
+    font-family: forte;
+
+    @media (max-width: 768px) {
+        font-size: 15vw;
+        top: 18vh;
+
+    }
+
+`;
+
+export const HeaderLetters = styled.span`
+       position: relative;
+    opacity: 0;
+    animation: move-text 0.75s forwards;
+
+`;

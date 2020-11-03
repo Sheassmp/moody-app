@@ -29,19 +29,19 @@ export default (req, res) => {
         desc:    "Last day of the high energy phase, A time of high motivation where the highest is within the evening period",
       },
       6: {
-        title: "Tamatea - ariki",
+        title: "Tamatea ariki",
         desc:    "The beginning of unpredictable energy, Avoid drastic decisions & making plans",
       },
       7: {
-        title: "Tamatea - a ngana",
+        title: "Tamatea a ngana",
         desc: "unpredictable energy phase, Its a time to practice patience",
       },
       8: {
-        title: "Tamatea - a io",
+        title: "Tamatea a io",
         desc:  "unpredictable energy phase, focus on your own preserving your wellbeing",
       },
       9: {
-        title: "Tamatea - whakapau",
+        title: "Tamatea whakapau",
         desc: "Last day of the unpredictable energys a time to give back and reflect",
       },
       10: {
@@ -73,11 +73,11 @@ export default (req, res) => {
         desc: "A good day, a good time to make big decisions",
       },
       17: {
-        title: "Rakau - nui",
+        title: "Rakau nui",
         desc: "a good day, a great time for celebrating special occasions",
       },
       18: {
-        title: "Rakau - matohi",
+        title: "Rakau matohi",
         desc: "Time for big meetings and resolving issues",
       },
       19: {
@@ -97,7 +97,7 @@ export default (req, res) => {
         desc: "Unpleasant days korekore brings, remember to be extra patient",
       },
       23: {
-        title: "Korekore piri ki nga Tangaroa",
+        title: "Korekore piri",
         desc: "Last of the unpleasant days, time to start to get invigorated",
       },
       24: {

@@ -146,6 +146,13 @@ export const CalendarButton = styled.svg`
     height: 150px;
     bottom: 103px;
     right: 0px;
+
+    @media (max-width: 768px) {
+        height: 115px;
+    left: 12px;
+    bottom: -17px;
+    }
+
     
     .my-icon::before {
         content: 'Hover to see animation.';
@@ -186,6 +193,9 @@ export const CalendarButton = styled.svg`
             animation-direction: forwards;
             animation-delay: 0.5s;
         }
+
+
+
 `;
 
 
@@ -216,6 +226,11 @@ right: 0px;
 top: 45vh;
 z-index: 1;
 position: absolute;
+
+@media (max-width: 768px) {
+    left: -18px;
+    top: 26px;
+    }
 
 &#exit-icon .left-dash .right-dash {
     opacity: 0.5;
@@ -263,7 +278,11 @@ export const InfoBtn = styled(InfoIcon)`
     }
    
 
-
+    @media (max-width: 768px) {
+        height: 91px;
+    left: -24px;
+    bottom: -13px;
+    }
 
 `;
 

@@ -51,15 +51,18 @@
     color: #999;
 }
 
+
 .headerText {
-    font-size: 7em;
+    font-size: 10vw;
     text-align: center;
     text-decoration: underline #f8f8f8;
     font-weight: 600;
-    top: 23vh;
+    
     position: absolute;
     font-family: forte;
+
 }
+
 
 .headerLetters:hover {
     color: purple;

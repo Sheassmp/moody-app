@@ -1,7 +1,7 @@
 import React, { Component, useEffect, useState } from "react";
 import utilStyles from "../../styles/utils.module.css";
 import styles from "../../components/layout/layout.module.css";
-import { HomeInfoContainer, PhotoText, MoonImg } from "./home-info.styles";
+import { HomeInfoContainer, PhotoText, MoonImg, HeaderText } from "./home-info.styles";
 import TextBox from "../../components/text-box/text-box.component";
 import WithSpinner from "../../components/with-spinner/with-spinner.component";
 import { Route, Switch } from "react-router-dom";
@@ -73,12 +73,12 @@ const HomeInfo = ({ genText, dateText, title, moonPhaseText, maramatakaDayText }
   return (
      
      <HomeInfoContainerWithSpinner isLoading={loading} >
-     <h1 className={utilStyles.headerText}>
+     <h1  className={utilStyles.headerText}>
         <SplitText className={utilStyles.headerLetters}  copy={title} role="heading"></SplitText>
       </h1>
       <MoonImg
         src={randomMoon}    
-        className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
+     
         alt={"Moon"}
         />
         <PhotoText>

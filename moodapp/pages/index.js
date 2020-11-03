@@ -366,7 +366,6 @@ export default class Home extends React.Component {
             </>
           ) : (
             <>
-              <InfoBtn id="info-button" onClick={this.showInfo} />
               <CloseBtn
                 onClick={this.setHidden}
                 id="exit-icon"

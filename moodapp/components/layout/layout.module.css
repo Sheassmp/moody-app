@@ -32,11 +32,6 @@
   -webkit-box-shadow: 14px 10px 23px -6px rgba(0,0,0,0.75);
   -moz-box-shadow: 14px 10px 23px -6px rgba(0,0,0,0.75);
   box-shadow: 14px 10px 23px -6px rgba(0,0,0,0.75);
-   
-   @media (max-width: 800px) {
-    width: 89%;
-  }
-
 }
 
 

@@ -13,6 +13,13 @@ export const InfoContainer = styled.div`
   z-index: 1;
   color: white;
   /* transition: all 3s ease-out; */
+  @media (max-width: 768px) {
+    height: fit-content;
+    padding: 50px 0 50px 0px;
+  }
+
+  
+  
 `;
 
 export const ButtonContainer = styled.div`
@@ -21,6 +28,11 @@ export const ButtonContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     
+    
+  @media (max-width: 768px) {
+   flex-direction: column;
+   padding-bottom: 60px;
+  }
 `;
 
 

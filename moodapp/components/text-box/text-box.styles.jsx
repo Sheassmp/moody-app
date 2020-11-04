@@ -6,7 +6,7 @@ export const MoonPhaseText = styled.h1`
     text-align: center;
     color: black;
     @media (max-width: 768px) {
-        font-size:0.75rem;
+        font-size:0.7rem;
     }
 `;
 
@@ -15,18 +15,19 @@ export const MaramatakaDayText = styled.span`
     text-align: center;
     color: black;
     display: block;
-    margin-block-start: 1em;
+    margin-block-start: .5em;
     margin-block-end: 0.25em;
     text-decoration: underline;
     
     @media (max-width: 768px) {
-       font-size:1.4rem;
+       font-size:.9rem;
+       margin-block-start: 0.6em;
     }
 `;
 
 export const TextBoxContainer = styled.div`
     width: 46vw;
-    height: 25vh;
+    height: fit-content;
     border-radius: 25px;
     position: absolute;
     top: 62vh;
@@ -43,9 +44,9 @@ export const TextBoxContainer = styled.div`
 
 
     @media (max-width: 768px) {
-        width: 91vw;
-    height: 28vh;
-    top: 60vh;
+        width: 94vw;
+    height: fit-content;
+    top: 58vh;
     }
 `;
 
@@ -55,9 +56,11 @@ export const DisplayText = styled.p`
     text-align: center;
     max-width: 700px;
     margin: auto;
+    padding: 0 4px;
     @media (max-width: 768px) {
-        min-height: 80px;
-        font-size:1rem;
+        height: fit-content;
+        font-size:.9rem;
+        
     }
    
 `;
@@ -70,6 +73,6 @@ export const DisplayDate = styled.span`
     bottom: 5px;
     position: relative;
     @media (max-width: 768px) {
-        font-size:0.75rem;
+        font-size:0.7rem;
     }
 `;

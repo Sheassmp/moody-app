@@ -55,7 +55,6 @@
 .headerText {
     font-size: 10vw;
     text-align: center;
-    text-decoration: underline #f8f8f8;
     font-weight: 600;
     
     position: absolute;
@@ -79,7 +78,7 @@
     box-shadow: 0 30px 40px 0 rgba(16, 36, 94, 0.2);
     border-radius: 4px;
     width: 350px;
-    max-width: 100%;
+    max-width: 95vw;
     background: white;
     font: inherit;
     line-height: 1.125em;
@@ -87,7 +86,7 @@
     overflow: hidden;
     position: absolute;
     top: 8vh;
-    right: 2vw;
+    right:  3vw;
     padding:5px;
    
 }

@@ -58,4 +58,14 @@ transition: all 0.4s ease-in-out;
 &:focus {
   outline: none;
 }
+
+@media (max-width: 768px) {
+    border-radius: 0;
+    background: linear-gradient(to bottom,rgb(229 25 25) 0%,rgb(85 32 32) 100%);
+    font-size: small;
+    bottom: 40px;
+    right: auto;
+    line-height: 40px;
+    width: auto;
+  }
 `;

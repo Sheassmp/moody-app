@@ -43,6 +43,9 @@ export const WelcomeButton = styled.button`
       
         outline:none;
   }
+
+
+
 `;
 
 export const WelcomeText = styled.div`
@@ -52,6 +55,14 @@ export const WelcomeText = styled.div`
   text-align: center;
   height: 180px;
   margin-bottom: 130px;
+ 
+  @media (max-width: 768px) {
+    font-size: large;
+    height: fit-content;
+    max-width: 97vw;
+    margin-top: 60px;
+    margin-bottom:0;
+  }
 `;
 
 const run = keyframes`

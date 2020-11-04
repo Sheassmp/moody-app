@@ -49,7 +49,7 @@ export const PhotoText = styled.p`
 
     @media (max-width: 768px) {
        bottom:41.5vh;
-        left: 32%;
+        left: 25vw;
         font-size: x-small;
     }
 `;
@@ -58,7 +58,7 @@ export const PhotoText = styled.p`
 export const HeaderText = styled.h1`
     font-size: 8vw;
     text-align: center;
-    text-decoration: underline #f8f8f8;
+
     font-weight: 600;
     top: 23vh;
     position: absolute;

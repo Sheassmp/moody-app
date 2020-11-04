@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Parallax } from "react-parallax";
-
+// import { useMediaQuery } from 'react-responsive'
 import {
   SectionContainer,
   Container,
   Details,
   DetailsHeader,
-  DetailsContainer
+  DetailsContainer,
+  DetailsImage
 } from "../floating-info/floating.info.styles";
 import { CloseInfoBtn } from "../custom-button/custom-button.styles";
 import SectionBox from "../section-box/section-box.component";
@@ -141,7 +142,7 @@ var sectionHeaders = [],
     sectionLinks = resourcesLinks;
     fullDescription = resourcesFDescription;
   }
-
+  // const isTabletOrMobile = useMediaQuery({ query: '(max-width:  768px)' })
   return (
     <Container>
       <CloseInfoBtn
@@ -179,7 +180,7 @@ var sectionHeaders = [],
           d="M385 395L235 245"
         />
       </CloseInfoBtn>
-      <Parallax style={{ height: `80vh` }} bgImage={image} strength={500} />
+      <Parallax style={{ height: `43vh` }} bgImage={image} strength={500} />
       <SectionContainer>
         <SectionBox
           handleClick={() => {
@@ -238,8 +239,8 @@ var sectionHeaders = [],
       </DetailsContainer>
       <DetailsContainer>
           <DetailsHeader>Code to predict moon rotation</DetailsHeader>
-          <img style={{width: "570px", height: "967px", margin: "auto", marginBottom: "40px", border: "double" }} src = {"/images/step1.png"} />
-          <img style={{width: "570px", height: "856px", margin: "auto", marginBottom: "40px", border: "double" }} src = {"/images/steps2and3.png"} />
+          <DetailsImage  src = {"/images/step1.png"} />
+          <DetailsImage  src = {"/images/steps2and3.png"} />
       </DetailsContainer>
     </Container>
   );

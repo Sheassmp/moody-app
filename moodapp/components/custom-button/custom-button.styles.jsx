@@ -1,6 +1,6 @@
-import styled,{css, keyframes} from 'styled-components';
-import CalendarIcon from '../../assets/date_range-black-18dp.svg';
-import InfoIcon from '../../assets/info.svg';
+import styled, { css, keyframes } from "styled-components";
+import CalendarIcon from "../../assets/date_range-black-18dp.svg";
+import InfoIcon from "../../assets/info.svg";
 
 const breatheAnimation = keyframes`
  0% { height: 50px; width: 250px; }
@@ -8,7 +8,6 @@ const breatheAnimation = keyframes`
  40% { height: 55px; width: 255px; opacity: 0.3; }
  100% { height: 50px; width: 250px; opacity: 0.6; }
 `;
-
 
 const buttonStyles = css`
   background-color: black;
@@ -61,143 +60,130 @@ const checkmarkAnimation = keyframes`
         transform: scale(1.2), translate(25,25);
         stroke: #21b587;
     }
-`
-
-
-
-
-const calendarButtonStyles = css`
-    .icon-box {
-		border: 1px solid #eee;
-		padding: 100px;
-		position: relative;
-		width:200px;
-	}
-	
-	.icon-box:before {
-		content: 'Hover to see animation.';
-		bottom: 5px;
-		display: block;
-		left: 0;
-		position: absolute;
-		text-align: center;
-		width: 100%;
-	}
-	
-	.icon-box:hover .circle {
-		animation: circle-animation 0.5s ease-out forwards;
-	}
-	
-	.icon-box:hover .checkmark {
-		animation: checkmark-animation 1s ease-out forwards;
-		animation-delay: 0.25s;
-	}
-	
-	#my-icon .circle {
-		opacity: 0;
-		transform: scale(0.9);
-		transform-origin: center;
-	}
-	
-	#my-icon .checkmark {
-		stroke-dasharray: 400;
-		stroke-dashoffset: 400;
-		transform-origin: center;
-		stroke: #cfd8dc;
-	}
 `;
 
+const calendarButtonStyles = css`
+  .icon-box {
+    border: 1px solid #eee;
+    padding: 100px;
+    position: relative;
+    width: 200px;
+  }
 
-const getButtonStyles = props => {
-    return props.inverted ? invertedButtonStyles : buttonStyles;
+  .icon-box:before {
+    content: "Hover to see animation.";
+    bottom: 5px;
+    display: block;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+
+  .icon-box:hover .circle {
+    animation: circle-animation 0.5s ease-out forwards;
+  }
+
+  .icon-box:hover .checkmark {
+    animation: checkmark-animation 1s ease-out forwards;
+    animation-delay: 0.25s;
+  }
+
+  #my-icon .circle {
+    opacity: 0;
+    transform: scale(0.9);
+    transform-origin: center;
+  }
+
+  #my-icon .checkmark {
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    transform-origin: center;
+    stroke: #cfd8dc;
+  }
+`;
+
+const getButtonStyles = (props) => {
+  return props.inverted ? invertedButtonStyles : buttonStyles;
 };
 
-const getCalendarBtnStyles = props => {
-    return props.inverted ? invertedButtonStyles : calendarButtonStyles;
-}
+const getCalendarBtnStyles = (props) => {
+  return props.inverted ? invertedButtonStyles : calendarButtonStyles;
+};
 
 export const ButtonContainer = styled.button`
-    min-width: 165px;
-    width: auto;
-  
-    height: 50px;
-    letter-spacing: 0.5px;
-    line-height: 50px;
-    padding: 0 35px 0 35px;
-    font-size: 15px;
-    text-transform: uppercase;
-    font-family: 'Fira Sans Extra Condensed', sans-serif;
-    display: flex;
-    flex-grow: 2;
-    justify-content: center;
-    font-weight: bolder;
-    cursor: pointer;
-    border-radius: 5px;
-    /* animation: ${breatheAnimation}; */
-    /* animation-duration: 8s; */
-    /* animation-iteration-count: infinite; */
-    ${getButtonStyles}
+  min-width: 165px;
+  width: auto;
+
+  height: 50px;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  padding: 0 35px 0 35px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  display: flex;
+  flex-grow: 2;
+  justify-content: center;
+  font-weight: bolder;
+  cursor: pointer;
+  border-radius: 5px;
+  /* animation: ${breatheAnimation}; */
+  /* animation-duration: 8s; */
+  /* animation-iteration-count: infinite; */
+  ${getButtonStyles}
 `;
 
 export const CalendarButton = styled.svg`
-    
-    width: 150px;
+  width: 150px;
+  position: absolute;
+  height: 150px;
+  bottom: 103px;
+  right: 0px;
+
+  @media (max-width: 768px) {
+    height: 97px;
+    left: -39px;
+    bottom: 0vh;
+  }
+
+  .my-icon::before {
+    content: "Hover to see animation.";
+    bottom: 5px;
+    display: block;
+    left: 0;
     position: absolute;
-    height: 150px;
-    bottom: 103px;
-    right: 0px;
+    text-align: center;
+    width: 100%;
+  }
 
-    @media (max-width: 768px) {
-        height: 115px;
-    left: 12px;
-    bottom: -17px;
-    }
+  &#my-icon .circle {
+    stroke: #cfd8dc;
+    stroke-miterlimit: 10;
+    opacity: 0;
+    transform: scale(0.9);
+    transform-origin: center;
+  }
 
-    
-    .my-icon::before {
-        content: 'Hover to see animation.';
-		bottom: 5px;
-		display: block;
-		left: 0;
-		position: absolute;
-		text-align: center;
-		width: 100%;
-    }
+  &#my-icon:hover .circle {
+    animation: ${circleAnimation} 0.5s ease-out forwards;
+  }
 
-
-    &#my-icon .circle {
-        stroke: #cfd8dc;
-        stroke-miterlimit: 10;
-        opacity: 0;
-		transform: scale(0.9);
-		transform-origin: center;
-        
-
-    }
-        
-   &#my-icon:hover .circle {
-            animation: ${circleAnimation} 0.5s ease-out forwards;
-        }
-
-   &#my-icon .checkmark {
-        stroke:#21b587;
-        stroke-linecap:round;
-		transform-origin: center;
-		stroke-dasharray: 400;
-		stroke-dashoffset: 400;
-    }
-        &#my-icon:hover .checkmark {
-            animation: ${checkmarkAnimation};
-            animation-duration: 1s;
-            animation-timing-function: ease-out;
-            animation-direction: forwards;
-            animation-delay: 0.5s;
-        }
-
-
-
+  &#my-icon .checkmark {
+    stroke: #21b587;
+    stroke-linecap: round;
+    transform-origin: center;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+  }
+  &#my-icon:hover .checkmark {
+    animation: ${checkmarkAnimation};
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-direction: forwards;
+    animation-delay: 0.5s;
+  }
 `;
-
 
 const dashAnimation = keyframes`
     40% {
@@ -216,53 +202,56 @@ const dashAnimation = keyframes`
         transform: scale(1.1),translate(25,25);
         stroke: #cc0033;
     }
-`
+`;
 
 export const CloseBtn = styled.svg`
+  width: 100px;
+  height: 100px;
+  right: 23px;
+  top: 45vh;
+  z-index: 1;
+  position: absolute;
+  @media (max-width: 768px) {
+    left: -10px;
+    top: 89vh;
+  }
 
-width: 100px;
-height: 100px;
-right: 0px;
-top: 45vh;
-z-index: 1;
-position: absolute;
-
-@media (max-width: 768px) {
-    left: -18px;
-    top: 26px;
-    }
-
-&#exit-icon .left-dash .right-dash {
+  &#exit-icon .left-dash .right-dash {
     opacity: 0.5;
-    stroke-linecap:round;
+    stroke-linecap: round;
     transform-origin: center;
     stroke-dasharray: 400;
     stroke-dashoffset: 400;
-}
-&#exit-icon:hover .left-dash {
-    animation: ${dashAnimation} 0.8s ease-out forwards; 
-    }
-    &#exit-icon:hover .right-dash {
-        animation: ${dashAnimation} 1s ease-out forwards; 
-    }
-    &#exit-icon .circle {
-        opacity: 0;
-        transform-origin: center;
-    }
-    &#exit-icon:hover .circle {
-        animation: ${circleAnimation} 0.5s ease-out forwards;        
-    }
-    
-    
-    `;
-
+  }
+  &#exit-icon:hover .left-dash {
+    animation: ${dashAnimation} 0.8s ease-out forwards;
+  }
+  &#exit-icon:hover .right-dash {
+    animation: ${dashAnimation} 1s ease-out forwards;
+  }
+  &#exit-icon .circle {
+    opacity: 0;
+    transform-origin: center;
+  }
+  &#exit-icon:hover .circle {
+    animation: ${circleAnimation} 0.5s ease-out forwards;
+  }
+`;
 
 export const SkipBtn = styled(CloseBtn)`
+  top: 45px;
+  @media (max-width: 768px) {
+    left: -1px;
     top: 45px;
+  }
 `;
 
 export const CloseInfoBtn = styled(CloseBtn)`
-    top: 0;
+  top: 0;
+  @media (max-width: 768px) {
+    left: -18px;
+    top: -21px;
+  }
 `;
 
 export const InfoBtn = styled(InfoIcon)`
@@ -271,38 +260,30 @@ export const InfoBtn = styled(InfoIcon)`
   height: 120px;
   right: 21px;
   bottom: 24px;
-    transition: all 1s ease-out;
+  transition: all 1s ease-out;
 
-    &:hover {
-        transform: scale(1.1);
-    }
-   
+  &:hover {
+    transform: scale(1.1);
+  }
 
-    @media (max-width: 768px) {
-        height: 91px;
-    left: -24px;
-    bottom: -13px;
-    }
-
+  @media (max-width: 768px) {
+    height: 95px;
+    left: -25px;
+    top: 47px;
+  }
 `;
-
-
 
 export const styledCircle = styled.circle`
-       
-       .circle {
+  .circle {
+    stroke: #cfd8dc;
+    stroke-miterlimit: 10;
 
-        stroke: #cfd8dc;
-        stroke-miterlimit: 10;
+    opacity: 0;
+    transform: scale(0.9);
+    transform-origin: center;
 
-        opacity: 0;
-		transform: scale(0.9);
-		transform-origin: center;
-
-        &:hover {
-            animation: ${circleAnimation} 0.5s ease-out forwards;
-        }
-       }
+    &:hover {
+      animation: ${circleAnimation} 0.5s ease-out forwards;
+    }
+  }
 `;
-
-

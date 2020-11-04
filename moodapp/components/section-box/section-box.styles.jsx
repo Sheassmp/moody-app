@@ -20,6 +20,10 @@ export const SectionContainer = styled.div`
         border-color: #b12d2db5;
         
     }
+
+    @media (max-width: 768px) {
+   max-height: 320px;
+  }
 `;
 
 export const SectionHeader = styled.h2`

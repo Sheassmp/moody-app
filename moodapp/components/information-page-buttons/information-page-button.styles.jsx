@@ -40,7 +40,7 @@ bottom: 3vh;
 right: 2vw;
 font-size: large;
 align-items: center;
-background:linear-gradient(to bottom,rgba(212,228,239,1) 0%,rgb(102 112 119) 100%);
+background: linear-gradient(to bottom,rgb(40 37 37) 0%,rgb(35 31 31) 100%);
 -webkit-box-shadow: 14px 10px 23px -6px rgba(0,0,0,0.75);
 -moz-box-shadow: 14px 10px 23px -6px rgba(0,0,0,0.75);
 box-shadow: 14px 10px 23px -6px rgba(0,0,0,0.75);

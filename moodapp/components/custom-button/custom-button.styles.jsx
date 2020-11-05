@@ -144,7 +144,7 @@ export const CalendarButton = styled.svg`
   @media (max-width: 768px) {
     height: 97px;
     left: -39px;
-    bottom: 0vh;
+    top: 85vh;
   }
 
   .my-icon::before {
@@ -212,8 +212,8 @@ export const CloseBtn = styled.svg`
   z-index: 1;
   position: absolute;
   @media (max-width: 768px) {
-    left: -10px;
-    top: 89vh;
+    left: -15px;
+    top: 85vh;
   }
 
   &#exit-icon .left-dash .right-dash {

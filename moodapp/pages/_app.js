@@ -15,22 +15,18 @@ export default function App({ Component, pageProps }) {
                 try {
                     const token = await firebaseCloudMessaging.init();
                     if(token) {
-                        getMessage();
+                        getMessage();   
                     }
                 } catch (error) {
                     console.log(error);
                 }
             }
-            
             function getMessage() {
                 const messaging = firebase.messaging();
-                messaging.onMessage(function(payload) {
-                   
-                    console.log(payload.data);
+                messaging.onMessage((message) => console.log(`foreground`, message));
                
-               });
-        }
-    }, []);
+                }
+                }, []);
 
     const fetcher = (url) => fetch(url).then((res) => res.json());
     const { data, error } =  useSWR('/api/maramataka', fetcher);

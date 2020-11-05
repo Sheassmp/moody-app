@@ -43,6 +43,8 @@ export default class Home extends React.Component {
     this.showInfo = this.showInfo.bind(this);
   }
 
+  
+
   componentDidMount() {
     this.getMoonPhase();
   }

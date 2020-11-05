@@ -19,4 +19,5 @@ if(!firebase.apps.length) {
 
     firebase.messaging().setBackgroundMessageHandler((payload) => 
     console.log('payload', payload));
+    alert(payload.data);
 }

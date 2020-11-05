@@ -39,6 +39,7 @@ const firebaseCloudMessaging = {
           if (fcm_token) {
             //setting FCM token in indexed db using localforage
             localforage.setItem("fcm_token", fcm_token);
+            return fcm_token;
           }
         }
       } catch (error) {

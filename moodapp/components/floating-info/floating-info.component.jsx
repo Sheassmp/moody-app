@@ -11,6 +11,7 @@ import {
 } from "../floating-info/floating.info.styles";
 import { CloseInfoBtn } from "../custom-button/custom-button.styles";
 import SectionBox from "../section-box/section-box.component";
+
 import {useMediaQuery} from 'react-responsive';
 
 //TODO create a component to be populated on click according to section
@@ -150,6 +151,8 @@ var sectionHeaders = [],
 
 
   const isTabletOrMobile = useMediaQuery({ query: '(max-width:  768px)' })
+
+
   return (
     <Container>
       <CloseInfoBtn

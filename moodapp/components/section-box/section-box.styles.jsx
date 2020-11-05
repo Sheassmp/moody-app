@@ -16,15 +16,17 @@ export const SectionContainer = styled.div`
     transition: border-color .5s ease-in-out;
     color: white;
     max-height: 350px;
+
     &:hover {
         border-color: #b12d2db5;
-        
     }
 
     @media (max-width: 768px) {
-   max-height: 320px;
-  }
+        max-height: 320px;
+    }
 `;
+
+
 
 export const SectionHeader = styled.h2`
     cursor: pointer;

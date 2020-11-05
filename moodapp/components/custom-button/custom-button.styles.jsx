@@ -208,7 +208,7 @@ export const CloseBtn = styled.svg`
   width: 100px;
   height: 100px;
   right: 23px;
-  top: 45vh;
+  bottom: 50px;
   z-index: 1;
   position: absolute;
   @media (max-width: 768px) {

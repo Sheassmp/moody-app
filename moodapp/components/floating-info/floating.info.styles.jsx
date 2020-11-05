@@ -43,6 +43,7 @@ export const SectionContainer = styled.div`
     justify-content: center;
     margin: 40px 50px 50px 50px;
     padding-bottom: 40px;
+    height: fit-content;
     border-bottom: groove #ffffff;
     display: -webkit-box;
     display: -ms-flexbox;

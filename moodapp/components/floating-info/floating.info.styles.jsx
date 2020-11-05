@@ -46,6 +46,11 @@ export const SectionContainer = styled.div`
     margin: 40px 50px 50px 50px;
     padding-bottom: 40px;
     border-bottom: groove #ffffff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 
     @media (max-width: 768px) {
         flex-direction: column;

@@ -4,6 +4,7 @@ import CloseIcon from '../../assets/close.svg';
 
 export const WelcomeContainer = styled.div`
   width: 100%;
+  min-height:100%;
   height: -webkit-fill-available;
   display: flex;
   flex-direction: column;

@@ -190,7 +190,7 @@ var sectionHeaders = [],
           d="M385 395L235 245"
         />
       </CloseInfoBtn>
-      <Parallax style={{ height: isTabletOrMobile ?  `43vh` : "73vh" }} bgImage={image} strength={500} />
+      <Parallax style={{ height: isTabletOrMobile ?  `335px` : "73vh" }} bgImage={image} strength={500} />
       <SectionContainer>
         <SectionBox
           handleClick={() => {

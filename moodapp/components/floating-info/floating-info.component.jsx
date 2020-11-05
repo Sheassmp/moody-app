@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Parallax } from "react-parallax";
-// import { useMediaQuery } from 'react-responsive'
+
 import {
   SectionContainer,
   Container,
@@ -11,8 +11,11 @@ import {
 } from "../floating-info/floating.info.styles";
 import { CloseInfoBtn } from "../custom-button/custom-button.styles";
 import SectionBox from "../section-box/section-box.component";
+import {useMediaQuery} from 'react-responsive';
 
 //TODO create a component to be populated on click according to section
+
+
 
 const FloatingInfoComponent = ({
   closeClick,
@@ -142,7 +145,11 @@ var sectionHeaders = [],
     sectionLinks = resourcesLinks;
     fullDescription = resourcesFDescription;
   }
-  // const isTabletOrMobile = useMediaQuery({ query: '(max-width:  768px)' })
+
+
+
+
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width:  768px)' })
   return (
     <Container>
       <CloseInfoBtn
@@ -180,7 +187,7 @@ var sectionHeaders = [],
           d="M385 395L235 245"
         />
       </CloseInfoBtn>
-      <Parallax style={{ height: `43vh` }} bgImage={image} strength={500} />
+      <Parallax style={{ height: isTabletOrMobile ?  `43vh` : "73vh" }} bgImage={image} strength={500} />
       <SectionContainer>
         <SectionBox
           handleClick={() => {

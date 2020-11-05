@@ -39,8 +39,6 @@ export const Details = styled.p`
 `;
 
 export const SectionContainer = styled.div`
-    display: flex;
-    flex-wrap: wrap;
     padding-left: 0;
     justify-content: center;
     margin: 40px 50px 50px 50px;
@@ -49,13 +47,17 @@ export const SectionContainer = styled.div`
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-wrap: wrap;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
 
     @media (max-width: 768px) {
         flex-direction: column;
         width: auto;
         margin: 0;
+        flex-wrap: unset;
+    -ms-flex-wrap: unset;
+    flex-wrap: unset;
     }
 
 `;

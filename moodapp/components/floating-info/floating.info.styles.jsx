@@ -44,7 +44,6 @@ export const SectionContainer = styled.div`
     margin: 40px 50px 50px 50px;
     padding-bottom: 40px;
     height: fit-content;
-    min-height:100%;
     border-bottom: groove #ffffff;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -54,12 +53,13 @@ export const SectionContainer = styled.div`
     flex-wrap: wrap;
 
     @media (max-width: 768px) {
+        display: block;
         flex-direction: column;
         width: auto;
         margin: 0;
         flex-wrap: unset;
-    -ms-flex-wrap: unset;
-    flex-wrap: unset;
+        -ms-flex-wrap: unset;
+        flex-wrap: unset;
     }
 
 `;

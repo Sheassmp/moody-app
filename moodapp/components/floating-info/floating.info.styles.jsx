@@ -4,12 +4,10 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     position:absolute;
-    /* width: 100vw; */
     height: fit-content;
     background: linear-gradient(360deg,#151111 10%,#a2a2a2 360%);
     text-align:center;
     top: 47px;
-    /* border: double; */
     align-self: center;
     z-index: 1;
 

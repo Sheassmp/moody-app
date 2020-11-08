@@ -10,7 +10,7 @@ export default (req, res) => {
       },
       1: {
         title: "Whiro",
-        desc: "End of the lowest energy phase, Its a time to relax and practice patience",
+        desc: "the lowest energy phase, Its a time to relax and practice patience",
       },
       2: {
         title: "Tirea",
@@ -18,11 +18,11 @@ export default (req, res) => {
       },
       3: {
         title: "Hoata",
-        desc: "Energy is building, utilize this time and stay active",
+        desc: "Medium to high energy is building, utilize this time and stay active",
       },
       4: {
-        title: "OUe/Ouenuku",
-        desc: "Energy is building, time to keep moving especially in the morning period",
+        title: "Oue/Ouenuku",
+        desc: "Energy is building into high, time to keep moving especially in the morning period",
       },
       5: {
         title: "Okoro",
@@ -46,7 +46,7 @@ export default (req, res) => {
       },
       10: {
         title: "Huna",
-        desc: "An unlucky day",
+        desc: "Low energy, An unlucky day",
       },
       11: {
         title: "Ariroa",
@@ -70,7 +70,7 @@ export default (req, res) => {
       },
       16: {
         title: "Oturu",
-        desc: "A good day, a good time to make big decisions",
+        desc: "High energy phase and  good time to make big decisions",
       },
       17: {
         title: "Rakau nui",
@@ -86,11 +86,11 @@ export default (req, res) => {
       },
       20: {
         title: "Oike",
-        desc:  "Rising energy, good time to take a break after the past productive days",
+        desc:  "low energy, good time to take a break after the past productive days",
       },
       21: {
         title: "Korekore",
-        desc: "Can be a bad day, be mindful of whats said and done",
+        desc: "can be known as flat energy which may result in a bad day, be mindful of whats said and done",
       },
       22: {
         title: "Korekore turua",
@@ -118,9 +118,13 @@ export default (req, res) => {
       },
       28: {
         title: "Orongonui",
-        desc: "A desirable day, if your hungry grab some fresh whitebait(ingana)",
+        desc: "A desirable day, enjoy good meals",
       },
       29: {
+        title: "Mauri",
+        desc: "The morning is fine. The moon is now darkened",
+      },
+      30: {
         title: "Mutuwhenua",
         desc: "Entering the lowest energy phase, rest & relax",
       },

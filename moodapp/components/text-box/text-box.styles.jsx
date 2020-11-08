@@ -44,7 +44,7 @@ export const TextBoxContainer = styled.div`
 
 
     @media (max-width: 768px) {
-        width: 94vw;
+    width: 94vw;
     height: fit-content;
     top: 58vh;
     }

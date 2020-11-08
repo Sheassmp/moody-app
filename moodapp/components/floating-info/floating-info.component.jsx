@@ -33,9 +33,9 @@ var sectionHeaders = [],
 
   var researchFDescription = "When referring to the lunar calendars in history you will find hundreds of different iterations all measuring time by the phases of the moon. " 
                            + "Yet when looking at lunar calendars in relation to mood and behaviour the information is scarcer within cited research texts, but it is present as shown in recordings of Elsdon (2018) "
-                           + "in 1959 in relation to Maramataka, as well as additional alternative examples, such as within ancient Egypt where a study conducted by Porceddu et al.(2008) " 
+                           + "in 1959 in relation to Maramataka. Another alternative example, such as within ancient Egypt where a study conducted by Porceddu et al.(2008) " 
                            + "observed the relation of the ancient Egyptians and their predicted unlucky and lucky days. Maramataka in particular has gained momentum recently in regard to linking historical beliefs and " 
-                           + "practices to be used in todays settings, The following above links will show certain papers I have found in relation to these points"; 
+                           + "practices to be used in todays settings, The following links will show certain papers I have found in relation to these points."; 
   var researchHeaders = [
     "The Maori Division of Time",
     "Mātauranga Māori—the ūkaipō of knowledge in New Zealand.",
@@ -47,11 +47,11 @@ var sectionHeaders = [],
 
   var researchDesc = [
     "Elsdon B. (1959)",
-    "Hikuroa, D. (2017).",
-    "Bloch, Y. (2012). - earliest iterations of lunar calendars ",
-    "Roberts, M., Weko, F., Clarke, L., (2006) -",
-    "Hanara, B., & Jackson, A. (2019). -",
-    "Porceddu, S., Jetsu, L., Markkanen, T., & Toivari-Viitala, J. (2008). -",
+    "Hikuroa, D. (2017)",
+    "Bloch, Y. (2012). - earliest iterations of lunar calendars",
+    "Roberts, M., Weko, F., Clarke, L., (2006)",
+    "Hanara, B., & Jackson, A. (2019)",
+    "Porceddu, S., Jetsu, L., Markkanen, T., & Toivari-Viitala, J. (2008)",
   ];
 
   var researchLinks = [
@@ -65,7 +65,7 @@ var sectionHeaders = [],
 
   var contactFDescription = "The main reason for building Moody has been on not creating one true way to understand what we will feel according to the moon, but to bring the " 
                              + "understanding of the different emotions we all may feel through daily life." +
-                             "Providing a way to possibly reduce stress or even provide a interesting alternative to other atrological beliefs that many utlize already within their daily lives" +
+                             " Providing a way to possibly reduce stress or even provide a interesting alternative to other atrological beliefs that many utlize already within their daily lives. " +
                              "Above are some services offering help to those who may need it and provide links to possible ways to aid those who also want to help."; 
 
   var contactHeaders = [
@@ -96,8 +96,8 @@ var sectionHeaders = [],
    
   ];
  
-  var resourcesFDescription = "The following are different resources found within New Zealand that offer interesting incite into the workings of Maramataka." +
-                                "Such as learning resources, Museums and news columns"; 
+  var resourcesFDescription = "The following are different resources found within New Zealand that offer interesting incite into the workings of Maramataka. " +
+                                "Such as learning resources, museums and news columns."; 
 
   var resourcesHeaders = [
     "Te Papa",

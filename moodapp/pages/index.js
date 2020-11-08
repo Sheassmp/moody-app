@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout/layout";
 import { BrowserRouter } from "react-router-dom";
@@ -8,11 +8,10 @@ import WithSpinner from "../components/with-spinner/with-spinner.component";
 import {
   CalendarButton,
   CloseBtn,
-  InfoBtn
+  InfoBtn,
 } from "../components/custom-button/custom-button.styles";
 import Welcome from "../components/welcome-screen/welcome-screen.component";
 import InformationPageInfo from "../components/information-page-info/information-page-info.component";
-import InfoIcon from "../assets/info.svg";
 
 const LayoutWithSpinner = WithSpinner(Layout);
 
@@ -29,13 +28,12 @@ export default class Home extends React.Component {
       maramatakaDay: "0",
       prediction: {
         title: "Welcome!",
-        desc: "Whats your mood today?"
+        desc: "Whats your mood today?",
       },
-      showInfo: false
+      showInfo: false,
     };
 
     this.setHidden = this.setHidden.bind(this);
-
     this.getMoonPhase = this.getMoonPhase.bind(this);
     this.setEnergy = this.setEnergy.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -43,15 +41,13 @@ export default class Home extends React.Component {
     this.showInfo = this.showInfo.bind(this);
   }
 
-  
-
   componentDidMount() {
     this.getMoonPhase();
   }
 
   setHidden() {
-    this.setState(state => ({
-      hidden: !state.hidden
+    this.setState((state) => ({
+      hidden: !state.hidden,
     }));
   }
 
@@ -59,7 +55,7 @@ export default class Home extends React.Component {
     console.log(date);
     this.setState(
       {
-        selectedDate: date
+        selectedDate: date,
       },
       () => {
         this.getMoonPhase();
@@ -68,8 +64,8 @@ export default class Home extends React.Component {
   }
 
   showInfo() {
-    this.setState(state => ({
-      showInfo: !state.showInfo
+    this.setState((state) => ({
+      showInfo: !state.showInfo,
     }));
   }
 
@@ -109,10 +105,10 @@ export default class Home extends React.Component {
     tempStart = daysLapsed;
     //scale fraction from 0-8 and round
     b = Math.round(daysLapsed * 8);
-
     if (b >= 8) {
       b = 0;
     }
+
     //switch case to set moonphase
     switch (b) {
       case 0:
@@ -120,31 +116,34 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart
+            startDate: tempStart,
           },
           () => {
             this.setEnergy(this.state.startDate);
           }
         );
         break;
+
       case 1:
         moon = "Waxing Crescent Moon";
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart
+            startDate: tempStart,
           },
           () => {
             this.setEnergy(this.state.startDate);
           }
         );
+
         break;
+
       case 2:
         moon = "Quater Moon";
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart
+            startDate: tempStart,
           },
           () => {
             this.setEnergy(this.state.startDate);
@@ -156,7 +155,7 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart
+            startDate: tempStart,
           },
           () => {
             this.setEnergy(this.state.startDate);
@@ -167,7 +166,7 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart
+            startDate: tempStart,
           },
           () => {
             this.setEnergy(this.state.startDate);
@@ -179,7 +178,7 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart
+            startDate: tempStart,
           },
           () => {
             this.setEnergy(this.state.startDate);
@@ -191,7 +190,7 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart
+            startDate: tempStart,
           },
           () => {
             this.setEnergy(this.state.startDate);
@@ -203,7 +202,7 @@ export default class Home extends React.Component {
         return this.setState(
           {
             moonPhase: moon,
-            startDate: tempStart
+            startDate: tempStart,
           },
           () => {
             this.setEnergy(this.state.startDate);
@@ -271,10 +270,10 @@ export default class Home extends React.Component {
       prediction = "27";
     } else if (moonRotationFraction > 0.885 && moonRotationFraction < 0.92) {
       prediction = "28";
-    } else if (moonRotationFraction > 0.92 && moonRotationFraction < 0.934) {
+    } else if (moonRotationFraction > 0.92 && moonRotationFraction < 0.923) {
       prediction = "29";
-    } else if (moonRotationFraction > 0.934 && moonRotationFraction < 0.954) {
-      prediction = "1";
+    } else if (moonRotationFraction > 0.923 && moonRotationFraction < 0.954) {
+      prediction = "30";
     } else if (moonRotationFraction > 0.954 && moonRotationFraction < 0.97) {
       prediction = "1";
     } else if (moonRotationFraction > 0.97 && moonRotationFraction < 0.999) {

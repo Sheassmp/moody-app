@@ -1,13 +1,7 @@
 import styled, { css, keyframes } from "styled-components";
-import CalendarIcon from "../../assets/date_range-black-18dp.svg";
 import InfoIcon from "../../assets/info.svg";
 
-const breatheAnimation = keyframes`
- 0% { height: 50px; width: 250px; }
- 30% { height: 55px; width: 255px; opacity: 1 }
- 40% { height: 55px; width: 255px; opacity: 0.3; }
- 100% { height: 50px; width: 250px; opacity: 0.6; }
-`;
+
 
 const buttonStyles = css`
   background-color: black;
@@ -128,9 +122,7 @@ export const ButtonContainer = styled.button`
   font-weight: bolder;
   cursor: pointer;
   border-radius: 5px;
-  /* animation: ${breatheAnimation}; */
-  /* animation-duration: 8s; */
-  /* animation-iteration-count: infinite; */
+
   ${getButtonStyles}
 `;
 

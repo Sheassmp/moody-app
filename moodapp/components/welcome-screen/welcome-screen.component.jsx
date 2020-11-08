@@ -28,13 +28,13 @@ const Welcome = () => {
     switch (count) {
       case 1:
         text =
-          "Moody does this by delving into certain beliefs related to the Maramataka/Lunar Calendar." +
-          " Primarily Maramataka was used for aiding in food gathering schedules depending on different phases on the moon, people & location..";
+          "Moody does this by delving into certain beliefs related to the Maramataka/lunar calendar." +
+          " Primarily Maramataka was used for aiding in food gathering schedules depending on different phases on the moon, people & location...";
         break;
       case 2:
         text =
-          "But it has been known to account also for mood and personal wellbeing(tinana). Each individual day in the lunar month representing a day within maramataka calendar relating to possible energys & moods." +
-          " Varying calendars are present throughout history by different pacific peoples. Offering an interesting alternatives to other astrological calendars..";
+          "But it has been known to account also for mood and personal wellbeing(tinana). Each individual day in the lunar month representing a day within maramataka calendar relating to possible energies & moods." +
+          " Varying calendars are present throughout history by different pacific peoples. Offering an interesting alternatives to other astrological calendars...";
         break;
       case 3:
         text =

@@ -43,6 +43,7 @@ function FloatingComponent({ text, content, image, title, type  }) {
     <>
       <SectionBox
         handleClick={() => setShowInfo(true)}
+        containerClick={() => setShowInfo(true)}
         style={{paddingTop: "40px"}}
           header={text}
         />
@@ -52,6 +53,7 @@ function FloatingComponent({ text, content, image, title, type  }) {
    
       <SectionBox
         handleClick={() => setShowInfo(false)}
+        containerClick={() => setShowInfo(false)}
         header={text}
       />
  

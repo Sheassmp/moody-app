@@ -17,14 +17,16 @@ const Welcome = () => {
   var [welcomeClass, setWelcomeClass] = useState(false);
   var [count, setCount] = useState(0);
 
+
   setTimeout(() => {
     setLoading(false);
   }, 3000);
 
   function handleClick() {
     var text = "";
+    
     setCount(++count);
-
+    
     switch (count) {
       case 1:
         text =
@@ -48,7 +50,6 @@ const Welcome = () => {
         text = "please refresh your page";
         break;
     }
-
     setWelcomeString(text);
   }
 
@@ -62,12 +63,12 @@ const Welcome = () => {
       </WelcomeContainer>
     );
   else
-    return (
+  return (
       <WelcomeContainer
         id={"welcome"}
         className={welcomeClass ? "closeMe" : ""}
       >
-        <WelcomeText>{welcomeString}</WelcomeText>
+        <WelcomeText className={"anim"} >{welcomeString}</WelcomeText>
         <WelcomeButton onClick={() => handleClick()}>next</WelcomeButton>
         <SkipBtn
                onClick={setWelcomeClass}

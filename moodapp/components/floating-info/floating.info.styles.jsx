@@ -9,7 +9,7 @@ export const Container = styled.div`
     text-align:center;
     top: 47px;
     align-self: center;
-    z-index: 1;
+    z-index: 3;
 
     @media (max-width: 768px) {
         height: fit-content;

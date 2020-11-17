@@ -59,13 +59,14 @@
     
     position: absolute;
     font-family: forte;
+    z-index: 2;
+   
+    
+
 
 }
 
 
-.headerLetters:hover {
-    color: purple;
-}
 
 .headerText span span {
     position: relative;

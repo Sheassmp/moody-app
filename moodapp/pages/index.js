@@ -139,7 +139,7 @@ export default class Home extends React.Component {
         break;
 
       case 2:
-        moon = "Quater Moon";
+        moon = "Quarter Moon";
         return this.setState(
           {
             moonPhase: moon,
@@ -186,7 +186,7 @@ export default class Home extends React.Component {
         );
         break;
       case 6:
-        moon = "Last Quater Moon";
+        moon = "Last Quarter Moon";
         return this.setState(
           {
             moonPhase: moon,

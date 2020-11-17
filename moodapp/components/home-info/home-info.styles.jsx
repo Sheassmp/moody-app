@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const MoonImg = styled.img`
   width: 41vw;
   height: 41vw;
@@ -8,6 +9,12 @@ export const MoonImg = styled.img`
   -moz-box-shadow: 14px 10px 23px -6px rgba(0, 0, 0, 0.75);
   box-shadow: 14px 10px 23px -6px rgba(0, 0, 0, 0.75);
   border-radius: 50%;
+  transition: all 5s ease-in-out;
+  transform: scale(0.95);
+   
+  &:hover, &:active {
+    transform: scale(1) rotate(5deg);
+  }
 
   @media (max-width: 768px) {
     width: 89vw;

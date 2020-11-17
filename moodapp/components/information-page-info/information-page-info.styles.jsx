@@ -9,7 +9,7 @@ export const InfoContainer = styled.div`
   justify-content: center;
   position: absolute;
   background: linear-gradient(360deg, #151111 10%, #a2a2a2 360%);
-  z-index: 1;
+  z-index: 3;
   color: white;
   @media (max-width: 768px) {
     height: fit-content;

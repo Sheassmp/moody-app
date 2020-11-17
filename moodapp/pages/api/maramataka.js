@@ -6,7 +6,7 @@ export default (req, res) => {
     setMoonPhases: {
       0: {
         title: "Welcome!",
-        desc: "loading...",
+        desc: "select a new date",
       },
       1: {
         title: "Whiro",
@@ -21,7 +21,7 @@ export default (req, res) => {
         desc: "Medium to high energy is building, utilize this time and stay active",
       },
       4: {
-        title: "Oue/Ouenuku",
+        title: "Ouenuku",
         desc: "Energy is building into high, time to keep moving especially in the morning period",
       },
       5: {

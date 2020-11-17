@@ -12,7 +12,7 @@ export const WelcomeContainer = styled.div`
   justify-content: center;
   position: absolute;
   background: linear-gradient(360deg, #151111 10%, #a2a2a2 360%);
-  z-index: 1;
+  z-index: 4;
   color: white;
   /* transition: all 3s ease-out; */
   
@@ -34,7 +34,9 @@ export const WelcomeButton = styled.button`
   font-size: x-large;
   font-weight: 800;
   transition: all 0.5s ease-in-out;
-  
+  position: relative;
+  top: 100px;
+
   &:hover {
     color: rgba(255, 255, 255, 1);
     box-shadow: 0 5px 15px rgba(145, 92, 182, 0.4);
@@ -49,6 +51,18 @@ export const WelcomeButton = styled.button`
 
 `;
 
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+`;
+
 export const WelcomeText = styled.div`
   padding: 25px;
   max-width: 80vw;
@@ -56,6 +70,10 @@ export const WelcomeText = styled.div`
   text-align: center;
   height: 180px;
   margin-bottom: 130px;
+
+  &.anim {
+    animation: ${fadeIn} 2s ease-in; 
+  }
  
   @media (max-width: 768px) {
     font-size: large;

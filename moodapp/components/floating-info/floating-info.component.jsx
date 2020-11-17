@@ -37,10 +37,10 @@ var sectionHeaders = [],
                            + "observed the relation of the ancient Egyptians and their predicted unlucky and lucky days. Maramataka in particular has gained momentum recently in regard to linking historical beliefs and " 
                            + "practices to be used in todays settings, The following links will show certain papers I have found in relation to these points."; 
   var researchHeaders = [
-    "The Maori Division of Time",
+    "The Māori Division of Time",
     "Mātauranga Māori—the ūkaipō of knowledge in New Zealand.",
     "Middle Assyrian Lunar Calendar and Chronology. In Living the Lunar Calendar",
-    "Maramataka: The Maori Moon Calendar.",
+    "Maramataka: The Māori Moon Calendar.",
     "Tangaroa Ara Rau: Tangaroa the Atua of Human Movement.",
     "Ancient Egyptian Calendars of Lucky and Unlucky Days.",
   ];
@@ -197,11 +197,19 @@ var sectionHeaders = [],
             var win = window.open(sectionLinks[0], "_blank");
             win.focus();
           }}
+          containerClick={() => {
+            var win = window.open(sectionLinks[0], "_blank");
+            win.focus();
+          }}
           header={sectionHeaders[0]}
           description={sectionDesc[0]}
         />
         <SectionBox
            handleClick={() => {
+            var win = window.open(sectionLinks[1], "_blank");
+            win.focus();
+          }}
+          containerClick={() => {
             var win = window.open(sectionLinks[1], "_blank");
             win.focus();
           }}
@@ -213,11 +221,19 @@ var sectionHeaders = [],
             var win = window.open(sectionLinks[2], "_blank");
             win.focus();
           }}
+          containerClick={() => {
+            var win = window.open(sectionLinks[2], "_blank");
+            win.focus();
+          }}
           header={sectionHeaders[2]}
           description={sectionDesc[2]}
         />
         <SectionBox
            handleClick={() => {
+            var win = window.open(sectionLinks[3], "_blank");
+            win.focus();
+          }}
+          containerClick={() => {
             var win = window.open(sectionLinks[3], "_blank");
             win.focus();
           }}
@@ -229,11 +245,19 @@ var sectionHeaders = [],
             var win = window.open(sectionLinks[4], "_blank");
             win.focus();
           }}
+          containerClick={() => {
+            var win = window.open(sectionLinks[4], "_blank");
+            win.focus();
+          }}
           header={sectionHeaders[4]}
           description={sectionDesc[4]}
         />
         <SectionBox
             handleClick={() => {
+            var win = window.open(sectionLinks[5], "_blank");
+            win.focus();
+          }}
+          containerClick={() => {
             var win = window.open(sectionLinks[5], "_blank");
             win.focus();
           }}

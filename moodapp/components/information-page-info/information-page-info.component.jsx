@@ -4,7 +4,6 @@ import {
   ButtonContainer
 } from "./information-page-info.styles";
 import FloatingInfoComponent from "../floating-info/floating-info.component";
-import InfoButtonComponent from '../information-page-buttons/information-page-button.component';
 import ReturnBtnComponent from '../information-page-buttons/return-button.component';
 import SectionBox from "../section-box/section-box.component";
 
@@ -14,7 +13,6 @@ function FloatingComponent({ text, content, image, title, type  }) {
 
     switch (content) {
         case 0:
-            title=""
             text = "Cited Research"
             image = "/images/visit.jpg"
             type= text;
@@ -22,19 +20,16 @@ function FloatingComponent({ text, content, image, title, type  }) {
         case 1:
             text = "Mental Health Aid"
             image = "/images/contact.jpg"
-            title = ""
             type=text;
             break;
         case 2:
             text = "Available Resources"
-            image= "/images/visit.jpg"
-            title= ""
+            image= "/images/research.jpg"
             type=text;
             break;
         default:
             text = ""
             image= "/images/visit.jpg"
-            title= ""
             type=text;
             break;
     }
@@ -43,21 +38,16 @@ function FloatingComponent({ text, content, image, title, type  }) {
     <>
       <SectionBox
         handleClick={() => setShowInfo(true)}
-        containerClick={() => setShowInfo(true)}
         style={{paddingTop: "40px"}}
           header={text}
         />
     </>
   ) : (
     <>
-   
       <SectionBox
         handleClick={() => setShowInfo(false)}
-        containerClick={() => setShowInfo(false)}
         header={text}
       />
- 
-  
       <FloatingInfoComponent
         type={type}
         image={image}

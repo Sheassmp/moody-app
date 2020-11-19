@@ -35,7 +35,7 @@ export const WelcomeButton = styled.button`
   font-weight: 800;
   transition: all 0.5s ease-in-out;
   position: relative;
-  top: 100px;
+ 
 
   &:hover {
     color: rgba(255, 255, 255, 1);
@@ -47,7 +47,14 @@ export const WelcomeButton = styled.button`
         outline:none;
   }
 
-
+  @media (min-width: 768px) {
+    font-size: large;
+    height: fit-content;
+    max-width: 97vw;
+    margin-top: 60px;
+    margin-bottom:0;
+    top: 100px;
+  }
 
 `;
 

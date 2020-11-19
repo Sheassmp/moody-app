@@ -43,7 +43,6 @@ const useError = initialState => {
 const HomeInfo = ({ genText, dateText, title, moonPhaseText, maramatakaDayText }) => {
   const [randomMoon, setRandomMoon] = useState(0);
   const [photoCred, setPhotoCred] = useState(0);
-  const { isErrored, setError } = useError(false);
   const [loading, setLoading] = useState(true);
 
 

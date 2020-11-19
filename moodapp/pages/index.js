@@ -279,7 +279,7 @@ export default class Home extends React.Component {
     } else if (moonRotationFraction > 0.97 && moonRotationFraction < 0.999) {
       prediction = "2";
     } else {
-      prediction = "error";
+      prediction = "0";
     }
 
     return this.setState({ maramatakaDay: prediction }, () => {

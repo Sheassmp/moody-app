@@ -29,7 +29,7 @@ function FloatingComponent({ text, content, image, title, type  }) {
             break;
         default:
             text = ""
-            image= "/images/visit.jpg"
+            image= "/images/visit.jpg" 
             type=text;
             break;
     }

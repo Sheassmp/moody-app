@@ -30,7 +30,7 @@ export const TextBoxContainer = styled.div`
     height: fit-content;
     border-radius: 25px;
     position: absolute;
-    top: 62vh;
+    top: 62%;
     box-shadow:10px 10px 25px 7.5px #100000;    
     text-align-last: center;
     /* gradients */
@@ -46,7 +46,7 @@ export const TextBoxContainer = styled.div`
     @media (max-width: 768px) {
     width: 94vw;
     height: fit-content;
-    top: 58vh;
+    top: 500px;
     }
 `;
 
